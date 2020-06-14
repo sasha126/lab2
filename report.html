@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<head>
+<title>Report</title>
+</head>
+<style>
+a{color: #05A5FF;}
+
+	
+	li{color: #05A5FF;
+	   font-family: Bahnschrift SemiCondensed;}
+	
+	
+	
+	h1 {text-align: center;
+  color: #FFFFFF;
+  top: 0;
+  width: 100%;
+	  }
+	
+	
+	
+	body{
+		font-size: 24px;
+		background: #313131;
+		color: #A6EDF9;
+		}
+	
+	
+	ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+list-style-type:none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #111;
+}
+
+ input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #3263cd;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 5px 0 #3263cd;
+      color: #3263cd;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 28px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio, label.checkbox {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      label.radio:before, label.checkbox:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      label.checkbox:before{ border-radius: 5px}
+      input[type=radio]:checked + label:before, label.radio:hover:before,
+      input[type=checkbox]:checked + label:before, label.chekbox:hover:before {
+      border: 2px solid #3263cd;
+      }
+      label.radio:after, label.checkbox:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #3263cd;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #000000;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #5b82d7;
+      }
+      @media (min-width: 568px) {
+      .name-item, {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, {
+      width: calc(50% - 20px);
+      }
+      }
+.testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+	color:black;
+      width: 60%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 15px 0 #3263cd; 
+      }
+
+ 
+
+</style>
+<body>
+<ul id="navbar" style="list-style-type: none;"><li><a href="index.html">Home</a></li>
+	<li><a class="active" href="rep.html">Report</a></li>
+	<li><a  href="about.html">About</a></li></ul>
+	<br>
+
+<div class="banner">
+          <h1>Report</h1>
+        </div>
+<div class="testbox">
+<form action="index.html" oninput="result.value=parseInt(ppl.value)">
+<fieldset>
+<legend>Personalia</legend>
+        <div class="item">
+          <p>Name</p>
+          <div class="name-item">
+            <input type="text" name="name" placeholder="First Name" />
+            <input type="text" name="name" placeholder="Last Name" />
+          </div>
+        </div>
+<div class="item">
+          <p>SSN</p>
+          <input type="password" name="ssn" placeholder="000-00-000"/>
+        </div>
+        <div class="item">
+          <p>Email</p>
+          <input type="email" placeholder="abc@gmail.com" name="email"/>
+        </div>
+        <div class="item">
+          <p>Phone Number</p>
+          <input type="tel" name="phone" placeholder="123 456 7890"/>
+        </div>
+
+<div class="item">
+          <p>District</p>
+          <Input type = “text” list =“name”>
+
+<datalist id =“name”>
+
+<option value = North>
+
+<option value = South>
+
+</datalist>
+</input>
+        </div>
+</fieldset>
+	<div class="item">
+	<p>Whom do you want to report on?</p>
+	<select id="ppl">
+  <option value="1" selected>Jonathan Doe</option>
+  <option value="2">Mary Sue</option>
+  <option value="3">Melissa Landy</option>
+  <option value="4">Martin Stewart</option>
+  <option value="5">Harry Jones</option>
+</select>
+	</div>
+
+        <div class="item">
+          <p>When did you see the person?</p>
+          <input type="datetime-local" name="bdate" required/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        
+        <div class="question">
+          <p>What is the best way to contact you?</p>
+          <div class="question-answer">
+            <div>
+              <input type="checkbox" value="none" id="checkbox_1" name="contact1"/>
+              <label for="checkbox_1" class="checkbox"><span>Phone</span></label>
+            </div>
+            <div>
+              <input type="checkbox" value="none" id="checkbox_2" name="contact2"/>
+              <label for="checkbox_2" class="checkbox"><span>Email</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <p>If phone, when is the best time of day for a call-back?</p>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="none" id="radio_4" name="time"/>
+              <label for="radio_4" class="radio"><span>8-11 AM</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_5" name="time"/>
+              <label for="radio_5" class="radio"><span>12-4 PM</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_6" name="time"/>
+              <label for="radio_6" class="radio"><span>6-10 PM</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <p>Anything else we should know?</p>
+          <textarea rows="3"></textarea>
+        </div>
+
+        <div class="btn-block">
+          <button type="submit" href="/">Send</button>
+        </div>
+<label for="file">Step 1 of 2</label>
+<progress id="file" value="50" max="100"> 50% </progress><br><br>
+<label for="result">Missing Person rank:</label>
+<output name="result" for="ppl"></output><br><br>
+<label for="disk_d">Likelihood of finding at this stage:</label>
+<meter id="disk_d" value="0.6">60%</meter>
+      </form>
+</div
+</body>
+</html>
