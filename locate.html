@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Find Me</title>
+<script>
+    function showPosition() {
+        if(navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var positionInfo = "Your current position is " + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude;
+                document.getElementById("result").innerHTML = positionInfo;
+            });
+        } else {
+            alert("Sorry, your browser does not support HTML5 geolocation.");
+        }
+    }
+</script>
+
+</head>
+<style>
+
+
+
+a{color: #05A5FF;}
+
+	
+	li{color: #05A5FF;
+	   font-family: Bahnschrift SemiCondensed;}
+	
+	
+	h1 {text-align: center;
+  color: #FFFFFF;
+  top: 0;
+  width: 100%;
+	  }
+	
+	
+	body{
+		font-size: 24px;
+		background: #313131;
+		color: #39B7CD;
+		}
+	
+	
+	ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+list-style-type:none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #111;
+}
+
+</style>
+<body>
+<ul id="navbar" style="list-style-type: none;"><li><a href="index.html">Home</a></li>
+	<li><a href="rep.html">Report</a></li>
+<li><a  class="active" href="#">Find Me</a></li>
+	<li><a href="about.html">About</a></li></ul>
+	<br>
+<h1>Find Me</h1>
+<p style="text-align:center;">
+    <button style="padding: 10px 24px;background-color: #3263cd;color:white;border-radius: 12px;" type="button" onclick="showPosition();">Show Position</button><br><br>
+</p>
+<p id="result" style="text-align:center;">
+        <!--Position information will be inserted here-->
+    </p>
+
+<p style="text-align:center;">
+
+<video width="320" height="240" controls>
+  <source src="video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<br>
+<br>
+You can always be found, never lose hope
+<br>
+<br>
+<audio controls>
+  <source src="music.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<br>
+
+<p style="text-align:center">
+<object data="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/i-miss-you-sometimes-when-one-1551217301.jpg" width="300" height="400"></object>
+
+<embed type="image/jpg" src="https://inboundmarketingsummit.com/wp-content/uploads/2019/02/Missing-You-Quotes-22.png" width="300" height="400">
+</p>
+</body>
+</html>

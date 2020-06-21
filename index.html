@@ -61,6 +61,26 @@ table, th, td {
   border: 1px solid white;
   border-collapse: collapse;
 }
+
+#cf {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
+}
+
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.top:hover {
+opacity:0
+}
 	
 	</style>
 <meta charset="utf-8">
@@ -71,12 +91,23 @@ table, th, td {
 
 <ul id="navbar" style="list-style-type: none;"><li><a class="active" href="#">Home</a></li>
 	<li><a href="rep.html">Report</a></li>
+<li><a href="locate.html">Find Me</a></li>
 	<li><a href="about.html">About</a></li></ul>
 	<br>
 	<h1>
   Missing Persons
 </h1>
-<table style="width:46%;display:inline-block">
+
+
+<p style="text-align:center">
+<div id="cf" width=300>
+  <img class="bottom" src="mboy.jpg" height=500 width=450/>
+  <img class="top" src="mgirl.jpg" height=500 width=450/>
+</div>
+<br><br><br><br><br><br><br><br><br>
+</p>
+
+<table style="width:46%;display:inline-block;">
   <caption style="background-color:#F0FFFF;color:#333">Cases Within the Last Week</caption>
   <tr>
     <th>Sr. No.</th>
@@ -116,6 +147,7 @@ table, th, td {
 
 <iframe src="2.html" width="50%" height="470" style="border:none; display:inline-block;">
 		  </iframe>
+
 
 </body>
 </html>
