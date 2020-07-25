@@ -1,6 +1,8 @@
 <!doctype html>
 <html>
 <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 <style>
 	a{color: #05A5FF;}
 
@@ -8,13 +10,83 @@
 	li{color: #05A5FF;
 	   font-family: Bahnschrift SemiCondensed;}
 	
-	iframe{float: right;}
+	iframe{height: 900px}
+
+  @keyframes move-left {
+    from {left: 0;}
+    to {left: -100%;}
+  }
+
+  @keyframes move-right {
+    from {right: 0;}
+    to {right: -100%;}
+  }
+
+  @keyframes default {
+    from {overflow-y: hidden;}
+    to { overflow-y: auto;}
+  }
+
+  html{
+    overflow-x: hidden;
+  }
 	
-	h1 {text-align: center;
-  color: #FFFFFF;
+  body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+    animation-name: default;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;  
+  }
+  body:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-left;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
+  body:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-right;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
+
+	h1 {
+  text-align: center;
+  color: transparent;
   top: 0;
   width: 100%;
-	  }
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  -webkit-text-stroke: #FFFFFF;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  font-size: 50px;
+  transition: 0.3s linear;
+	}
+
+  h1:hover{
+    -webkit-text-fill-color: #fff;
+    transition: 0.3s linear;
+  }
 	
 	td{vertical-align: top;}
 	
@@ -34,7 +106,7 @@
 }
 
 li {
-  float: left;
+ display: inline-block;
 }
 
 li a {
@@ -44,10 +116,18 @@ list-style-type:none;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  position:relative;
+    z-index: 1;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
+header img{
+  position: absolute;
+  top: 10px;
+}
+
+li a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .active {
@@ -64,9 +144,10 @@ table, th, td {
 
 #cf {
   position:relative;
-  height:281px;
+  height:500px;
   width:450px;
-  margin:0 auto;
+  margin:0 auto 100px;
+
 }
 
 #cf img {
@@ -81,6 +162,102 @@ table, th, td {
 #cf img.top:hover {
 opacity:0
 }
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+nav ul li a,
+nav ul li a:after {
+  transition: all .5s;
+}
+
+nav ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #111;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav ul li a:hover:not(.active):after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+.card{
+ background-color: transparent;
+  border: none;
+  text-align: center;
+  height: 300px;
+}
+.card{
+  background: linear-gradient(145deg, #000, transparent);
+  padding: 30px 0;
+  height: inherit;
+  margin-bottom: 30px;
+}
+
+.card .data{
+  transform: translateY(50px);
+  overflow: hidden;
+  transition: all 500ms ease-in-out; 
+}
+
+.card .data .learn-more{
+  opacity: 0;
+  transition: all 500ms ease-in-out; 
+}
+
+.card:hover .data{
+  transform: translateX(0);
+  transition: all 500ms ease-in-out; 
+}
+
+.card:hover .learn-more{
+  opacity: 1;
+  transition: all 500ms ease-in-out; 
+}
+
+.card .data h4{
+  font-size: 35px;
+  line-height: 60px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.card .data p{
+  margin-bottom: 0
+}
+.card .data img{
+  height: 80px;
+  width: 80px;
+}
+
+footer{
+  background: #000;
+    padding: 8px;
+}
+
+footer p{
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
 	
 	</style>
 <meta charset="utf-8">
@@ -88,66 +265,182 @@ opacity:0
 </head>
 
 <body>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <img src="logo.png" alt="Missing Persons" height="80">
+        <nav>
+            <ul id="navbar" style="list-style-type: none;">
+              <li><a class="active" href="#">Home</a></li>
+              <li><a href="rep.html">Report</a></li>
+              <li><a href="locate.html">Find Me</a></li>
+              <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+      </div> 
+    </div>
+  </div>
+</header>
 
-<ul id="navbar" style="list-style-type: none;"><li><a class="active" href="#">Home</a></li>
-	<li><a href="rep.html">Report</a></li>
-<li><a href="locate.html">Find Me</a></li>
-	<li><a href="about.html">About</a></li></ul>
-	<br>
-	<h1>
-  Missing Persons
-</h1>
+<main>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          	<h1>
+                Missing Persons
+            </h1>
+            <div id="cf" width=300>
+                <img class="bottom" src="mboy.jpg" height=500 width=450/>
+                <img class="top" src="mgirl.jpg" height=500 width=450/>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-
-<p style="text-align:center">
-<div id="cf" width=300>
-  <img class="bottom" src="mboy.jpg" height=500 width=450/>
-  <img class="top" src="mgirl.jpg" height=500 width=450/>
-</div>
-<br><br><br><br><br><br><br><br><br>
-</p>
-
-<table style="width:46%;display:inline-block;">
-  <caption style="background-color:#F0FFFF;color:#333">Cases Within the Last Week</caption>
-  <tr>
-    <th>Sr. No.</th>
-    <th>Name</th>
-<th>Last Seen</th>
-	<th>More</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td>Jonathan Doe</td>
-<td>10/06/2020</td>
-<td><a href="lab1.html" target="_blank">Learn More</a></td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Mary Sue</td>
-<td>10/06/2020</td>
-<td><a href="lab1.html">Learn More</a></td>
-  </tr>
-<tr>
-<td>3</td>
-    <td>Melissa Landy</td>
-<td>07/06/2020</td>
-<td><a href="lab1.html">Learn More</a></td>
-  </tr>
-<td>4</td>
-    <td>Martin Stewart</td>
-<td>06/06/2020</td>
-<td><a href="lab1.html">Learn More</a></td>
-  </tr>
-<td>5</td>
-    <td>Harry Jones</td>
-<td>06/06/2020</td>
-<td><a href="lab1.html">Learn More</a></td>
-  </tr>
-</table>
-
-<iframe src="2.html" width="50%" height="470" style="border:none; display:inline-block;">
-		  </iframe>
-
-
+  <section>
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                  <div class="data">
+                     <img src="boy.jpg" alt="BOY"/>
+                    <h4> Jonathan Doe</h4>
+                    <div class="learn-more">
+                        <time> Date: 10th June 2020 </time>
+                        <p> Last seen: Calanngute</p>
+                        <a href="lab1.html">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card">
+                    <div class="data">
+                       <img src="boy.jpg" alt="BOY"/>
+                      <h4> Jonathan Doe</h4>
+                      <div class="learn-more">
+                          <time> Date: 10th June 2020 </time>
+                          <p> Last seen: Calanngute</p>
+                          <a href="lab1.html">Learn More</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                      <div class="data">
+                         <img src="boy.jpg" alt="BOY"/>
+                        <h4> Jonathan Doe</h4>
+                        <div class="learn-more">
+                            <time> Date: 10th June 2020 </time>
+                            <p> Last seen: Calanngute</p>
+                            <a href="lab1.html">Learn More</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card">
+                        <div class="data">
+                           <img src="boy.jpg" alt="BOY"/>
+                          <h4> Jonathan Doe</h4>
+                          <div class="learn-more">
+                              <time> Date: 10th June 2020 </time>
+                              <p> Last seen: Calanngute</p>
+                              <a href="lab1.html">Learn More</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                          <div class="data">
+                             <img src="boy.jpg" alt="BOY"/>
+                            <h4> Jonathan Doe</h4>
+                            <div class="learn-more">
+                                <time> Date: 10th June 2020 </time>
+                                <p> Last seen: Calanngute</p>
+                                <a href="lab1.html">Learn More</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                          <div class="card">
+                            <div class="data">
+                               <img src="boy.jpg" alt="BOY"/>
+                              <h4> Jonathan Doe</h4>
+                              <div class="learn-more">
+                                  <time> Date: 10th June 2020 </time>
+                                  <p> Last seen: Calanngute</p>
+                                  <a href="lab1.html">Learn More</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                 
+           
+         
+              <!-- <table>
+                  <caption style="background-color:#F0FFFF;color:#333; caption-side: top; text-align: center">Cases Within the Last Week</caption>
+                  <tr>
+                    <th>Sr. No.</th>
+                    <th>Name</th>
+                <th>Last Seen</th>
+                  <th>More</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Jonathan Doe</td>
+                <td>10/06/2020</td>
+                <td><a href="lab1.html" target="_blank">Learn More</a></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Mary Sue</td>
+                <td>10/06/2020</td>
+                <td><a href="lab1.html">Learn More</a></td>
+                  </tr>
+                <tr>
+                <td>3</td>
+                    <td>Melissa Landy</td>
+                <td>07/06/2020</td>
+                <td><a href="lab1.html">Learn More</a></td>
+                  </tr>
+                <td>4</td>
+                    <td>Martin Stewart</td>
+                <td>06/06/2020</td>
+                <td><a href="lab1.html">Learn More</a></td>
+                  </tr>
+                <td>5</td>
+                    <td>Harry Jones</td>
+                <td>06/06/2020</td>
+                <td><a href="lab1.html">Learn More</a></td>
+                  </tr>
+                </table> -->
+         
+        </div>
+      <div class="row">
+          <div class="col-sm-6" style="margin: auto">
+            <h2 class="text-center" style="margin-top: 50px"> Missing Cases Interactive Map </h4>
+              <iframe src="2.html" width="100%" height="470" style="border:none; display:inline-block;">
+                </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+</main>
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <p> Copyright 2020 - All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

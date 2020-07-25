@@ -1,8 +1,67 @@
 <!DOCTYPE html>
 <head>
 <title>About</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 <style>
+  @keyframes move-left {
+    from {left: 0;}
+    to {left: -100%;}
+  }
+
+  @keyframes move-right {
+    from {right: 0;}
+    to {right: -100%;}
+  }
+
+  @keyframes default {
+    from { overflow-y: hidden;}
+    to {overflow-y: auto;}
+  }
+
+  html{
+    overflow-x: hidden;
+  }
+	
+  body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+    animation-name: default;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;  
+  }
+  body:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-left;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
+  body:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-right;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
+
 a{color: #05A5FF;}
 
 	
@@ -25,8 +84,43 @@ a{color: #05A5FF;}
 		color: #A6EDF9;
 		}
 	
+	  nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+nav ul li a,
+nav ul li a:after {
+  transition: all .5s;
+}
+
+nav ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #111;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav ul li a:hover:not(.active):after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
 	
-	ul.navbar {
+	
+ul.navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -35,7 +129,7 @@ a{color: #05A5FF;}
 }
 
 li {
-  float: left;
+ display: inline-block;
 }
 
 li a {
@@ -45,14 +139,34 @@ list-style-type:none;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  position:relative;
+    z-index: 1;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
+header img{
+  position: absolute;
+  top: 10px;
+}
+
+li a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .active {
   background-color: #111;
+}
+
+footer{
+  background: #000;
+    padding: 8px;
+}
+
+footer p{
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
 }
 
 td.diff{
@@ -67,50 +181,91 @@ table, th, td {
   border: 1px solid white;
   border-collapse: collapse;
 }
+h1{
+  margin-bottom: 50px;
+}
 </style>
 <body>
-<ul id="navbar" style="list-style-type: none;"><li><a href="index.html">Home</a></li>
-	<li><a href="rep.html">Report</a></li>
-<li><a href="locate.html">Find Me</a></li>
-	<li><a class="active" href="#">About</a></li></ul>
-	<br>
+    <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <img src="logo.png" alt="Missing Persons" height="80">
+              <nav>
+                  <ul id="navbar" style="list-style-type: none;">
+                    <li><a  href="index.html">Home</a></li>
+                    <li><a   href="rep.html">Report</a></li>
+                    <li><a   href="locate.html">Find Me</a></li>
+                    <li><a  class="active"href="about.html">About</a></li>
+                  </ul>
+              </nav>
+            </div> 
+          </div>
+        </div>
+      </header>
+      <main>
 <h1>About</h1>
 
-<canvas id="myCanvas" width="450" height="400" style="border:1px solid #ffffff;align:center;display:inline-block;">
-</canvas>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+        <table>
+            <thead>
+              <tr>
+                <th>Contact Method</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">Phone No.</td>
+                <td>+91823100765</td>
+              </tr>
+          <tr>
+          <td>+918542893546</td>
+          </tr>
+              <tr>
+                <td>Email</td>
+                <td>abcde@gmail.com</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="2" style="text-align:center">Contact Us</td>
+              </tr>
+            </tfoot>
+          </table>
+        
+    </div>
+    <div class="col-sm-6">
+        <table >
+            <tr>
+            <td class="diff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</td>
+            <tr>
+            </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <canvas id="myCanvas" height="400" style="margin-top: 30px; border:1px solid #ffffff;align:center;display:inline-block;">
+          </canvas>
+    </div>
+  </div>
+</div>
 
-<table style="display:inline-block">
-  <thead>
-    <tr>
-      <th>Contact Method</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="2">Phone No.</td>
-      <td>+91823100765</td>
-    </tr>
-<tr>
-<td>+918542893546</td>
-</tr>
-    <tr>
-      <td>Email</td>
-      <td>abcde@gmail.com</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="2" style="text-align:center">Contact Us</td>
-    </tr>
-  </tfoot>
-</table>
 
-<table width="400" style="display:inline-block">
-<tr>
-<td class="diff">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</td>
-<tr>
-</table>
+
+
+
+      </main><footer>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-sm-12">
+                <p> Copyright 2020 - All rights reserved</p>
+              </div>
+            </div>
+          </div>
+        </footer>
 
 </body>
 </html>

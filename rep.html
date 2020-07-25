@@ -3,9 +3,67 @@
 
 <head>
   <title>Report</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 
 <style>
+  @keyframes move-left {
+    from {left: 0;}
+    to {left: -100%;}
+  }
+
+  @keyframes move-right {
+    from {right: 0;}
+    to {right: -100%;}
+  }
+
+  @keyframes default {
+    from { overflow-y: hidden;}
+    to {overflow-y: auto;}
+  }
+
+  html{
+    overflow-x: hidden;
+  }
+	
+  body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+    animation-name: default;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;  
+  }
+  body:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-left;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
+  body:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-right;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
 body{
 background-color:#333;
 }
@@ -31,7 +89,43 @@ a{color: #05A5FF;}
 		}
 	
 	
-	ul.navbar {
+    nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 20px 0;
+}
+
+nav ul li a,
+nav ul li a:after {
+  transition: all .5s;
+}
+
+nav ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 1px;
+  content: '.';
+  color: transparent;
+  background: #111;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav ul li a:hover:not(.active):after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+	
+	
+ul.navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -40,7 +134,7 @@ a{color: #05A5FF;}
 }
 
 li {
-  float: left;
+ display: inline-block;
 }
 
 li a {
@@ -50,14 +144,40 @@ list-style-type:none;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  position:relative;
+    z-index: 1;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
+header img{
+  position: absolute;
+  top: 10px;
+}
+
+li a:hover {
+  color: #fff;
+  text-decoration: none;
 }
 
 .active {
   background-color: #111;
+}
+
+footer{
+  background: #000;
+    padding: 8px;
+}
+
+footer p{
+  font-size: 16px;
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+ol{
+  padding: 0;
+}
+ol li{
+  display: block
 }
 
 	
@@ -65,41 +185,80 @@ li a:hover:not(.active) {
 </style>
 
 <body>
-<ul id="navbar" style="list-style-type: none;"><li><a href="index.html">Home</a></li>
-	<li><a class="active"  href="rep.html">Report</a></li>
-<li><a href="locate.html">Find Me</a></li>
-	<li><a href="about.html">About</a></li></ul>
-	<br>
+    <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <img src="logo.png" alt="Missing Persons" height="80">
+              <nav>
+                  <ul id="navbar" style="list-style-type: none;">
+                    <li><a  href="index.html">Home</a></li>
+                    <li><a  class="active" href="rep.html">Report</a></li>
+                    <li><a href="locate.html">Find Me</a></li>
+                    <li><a href="about.html">About</a></li>
+                  </ul>
+              </nav>
+            </div> 
+          </div>
+        </div>
+      </header>
+      <main>
 
-<h1 style="text-align:center;color:white">Report Information</h1>
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  <h1 style="text-align:center;color:white">Report Information</h1>
 
-<p style="color:#C3E4ED;">Information on:</p>
-<ol class="extra">
-<li style="color:#C3E4ED;float:none;">Whereabouts</li>
-<li style="color:#C3E4ED;float:none;">Way to Contact</li>
-</ol>
+                  <p style="color:white;text-align:center">
+                      Get in touch either with the concerned authorities or with the missing person's kin.
+                      </p>
+              </div>
+          </div>
+          <div class="row" style="margin-bottom: 30px">
+            <div class="col-sm-6">
+                <p style="color:#C3E4ED;">Information on:</p>
+                <ol class="extra">
+                <li style="color:#C3E4ED;float:none;">Whereabouts</li>
+                <li style="color:#C3E4ED;float:none;">Way to Contact</li>
+                </ol>
+                
+            </div>
+            <div class="col-sm-6">
+                <dl style="color:#C3E4ED;">
+                    <dt>Goa Police</dt>
+                      <dd>112 or 108</dd>
+                    <dt>Family</dt>
+                       <dd>0832 2246523</dd>
+                       <dd>+91 9876543210</dd>
+                  </dl>
+            
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: 30px">
+            <div class="col-sm-12">
+               
+                <div style="text-align:center">
+                    <a href="index.html">
+                    <img src="m.png" alt="Missing" height=130 width=130/>
+                    </a>
+                    <br>
+                    
+                    <a href="report.html">Report Now</a>
+                    </div>
+            </div>
+          </div>
+        </div>
 
-
-<p style="color:white;text-align:center">
-Get in touch either with the concerned authorities or with the missing person's kin.
-</p>
-
-<dl style="color:#C3E4ED;">
-      <dt>Goa Police</dt>
-        <dd>112 or 108</dd>
-      <dt>Family</dt>
-         <dd>0832 2246523</dd>
-         <dd>+91 9876543210</dd>
-    </dl>
-
-<div style="text-align:center">
-<a href="index.html">
-<img src="m.png" alt="Missing" height=130 width=130/>
-</a>
-<br>
-
-<a href="report.html">Report Now</a>
-</div>
+</main>
+<footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <p> Copyright 2020 - All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 </body>
 

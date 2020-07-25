@@ -3,6 +3,34 @@
 <head>
 <meta charset="utf-8">
 <title>Map</title>
+<style>
+ body{
+    overflow: hidden;
+    position: relative;
+  }
+ body img{
+  height: auto;
+  width: 100%;
+}
+area:hover:after{
+    font-size: 20px;
+    color: #000000;
+
+    position: absolute;
+
+}
+area.north:hover:after{
+  top: 20%;
+  left: 16%;
+  content: 'click here for North Goa case';
+}
+area.south:hover:after{
+  bottom: 30%;
+  left: 50%;
+  content: 'click here for South Goa case';
+}
+
+</style>
 </head>
 <body>
 	
@@ -10,8 +38,8 @@
 <img src="goa-district-map.jpg"  height="450" alt="District Map" usemap="#workmap"/>
 </p>
 <map name="workmap">
-  <area shape="rect" coords="10,20,600,201" alt="North" href="mman.jpg">
-  <area shape="rect" coords="10,201,796,1111" alt="South" href="babygirl.jpg">
+  <area class="north" shape="rect" coords="10,20,600,401" alt="North" href="mman.jpg">
+  <area class="south" shape="rect" coords="10,201,796,1111" alt="South" href="babygirl.jpg">
 </map>
 
 </body>
