@@ -168,7 +168,144 @@ footer p{
   margin-bottom: 0;
 }
 
-
+#overrides input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      #overrides input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      #overrides input[type="date"] {
+      padding: 4px 5px;
+      }
+      #overrides select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      #overrides textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      #overrides .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #3263cd;
+      }
+      #overrides .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 5px 0 #3263cd;
+      color: #3263cd;
+      }
+      #overrides .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      #overrides input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      #overrides .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      #overrides .item i {
+      right: 2%;
+      top: 28px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      #overrides input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      #overrides label.radio, label.checkbox {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+     #overrides .question span {
+      margin-left: 30px;
+      }
+    #overrides label.radio:before, label.checkbox:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+    transform: translatey(-50%);
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+   #overrides label.checkbox:before{ border-radius: 5px}
+      input[type=radio]:checked + label:before, label.radio:hover:before,
+      input[type=checkbox]:checked + label:before, label.chekbox:hover:before {
+      border: 2px solid #3263cd;
+      }
+    #overrides label.radio:after, label.checkbox:after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid #3263cd;
+      border-top: none;
+      border-right: none;
+      top: 50%;
+      transform: rotate(-45deg) translatey(-50%);
+      opacity: 0;
+      }
+     #overrides input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
+      opacity: 1;
+      }
+ #overrides .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+  #overrides button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #000000;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+    #overrides button:hover {
+      background: #5b82d7;
+      }
+      @media (min-width: 568px) {
+      .name-item, {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, {
+      width: calc(50% - 20px);
+      }
+      }
+ #overrides .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+#overrides form {
+	color:black;
+      width: 60%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 15px 0 #ffffff; 
+      }
 </style>
 <body>
     <header>
