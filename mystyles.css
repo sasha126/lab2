@@ -1,45 +1,45 @@
-#bootstrap-overrides input, select, textarea {
+#overrides input, select, textarea {
       margin-bottom: 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
       }
-      #bootstrap-overrides input {
+      #overrides input {
       width: calc(100% - 10px);
       padding: 5px;
       }
-      #bootstrap-overrides input[type="date"] {
+      #overrides input[type="date"] {
       padding: 4px 5px;
       }
-      #bootstrap-overrides select {
+      #overrides select {
       width: 100%;
       padding: 7px 0;
       background: transparent;
       }
-      #bootstrap-overrides textarea {
+      #overrides textarea {
       width: calc(100% - 12px);
       padding: 5px;
       }
-      #bootstrap-overrides .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      #overrides .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
       color:  #3263cd;
       }
-      #bootstrap-overrides .item input:hover, .item select:hover, .item textarea:hover {
+      #overrides .item input:hover, .item select:hover, .item textarea:hover {
       border: 1px solid transparent;
       box-shadow: 0 0 5px 0 #3263cd;
       color: #3263cd;
       }
-      #bootstrap-overrides .item {
+      #overrides .item {
       position: relative;
       margin: 10px 0;
       }
-      #bootstrap-overrides input[type="date"]::-webkit-inner-spin-button {
+      #overrides input[type="date"]::-webkit-inner-spin-button {
       display: none;
       }
-      #bootstrap-overrides .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      #overrides .item i, input[type="date"]::-webkit-calendar-picker-indicator {
       position: absolute;
       font-size: 20px;
       color: #a9a9a9;
       }
-      #bootstrap-overrides .item i {
+      #overrides .item i {
       right: 2%;
       top: 28px;
       z-index: 1;
@@ -50,19 +50,19 @@
       opacity: 0;
       cursor: pointer;
       }
-      #bootstrap-overrides input[type=radio], input[type=checkbox]  {
+      #overrides input[type=radio], input[type=checkbox]  {
       display: none;
       }
-      #bootstrap-overrides label.radio, label.checkbox {
+      #overrides label.radio, label.checkbox {
       position: relative;
       display: inline-block;
       margin: 5px 20px 15px 0;
       cursor: pointer;
       }
-     #bootstrap-overrides .question span {
+     #overrides .question span {
       margin-left: 30px;
       }
-    #bootstrap-overrides label.radio:before, label.checkbox:before{
+    #overrides label.radio:before, label.checkbox:before{
       content: "";
       position: absolute;
       top: 50%;
@@ -73,12 +73,12 @@
       border-radius: 50%;
       border: 2px solid #ccc;
       }
-   #bootstrap-overrides label.checkbox:before{ border-radius: 5px}
+   #overrides label.checkbox:before{ border-radius: 5px}
       input[type=radio]:checked + label:before, label.radio:hover:before,
       input[type=checkbox]:checked + label:before, label.chekbox:hover:before {
       border: 2px solid #3263cd;
       }
-    #bootstrap-overrides label.radio:after, label.checkbox:after {
+    #overrides label.radio:after, label.checkbox:after {
       content: "";
       position: absolute;
       left: 6px;
@@ -91,14 +91,14 @@
       transform: rotate(-45deg) translatey(-50%);
       opacity: 0;
       }
-     #bootstrap-overrides input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
+     #overrides input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
       opacity: 1;
       }
- #bootstrap-overrides .btn-block {
+ #overrides .btn-block {
       margin-top: 10px;
       text-align: center;
       }
-  #bootstrap-overrides button {
+  #overrides button {
       width: 150px;
       padding: 10px;
       border: none;
@@ -108,7 +108,7 @@
       color: #fff;
       cursor: pointer;
       }
-    #bootstrap-overrides button:hover {
+    #overrides button:hover {
       background: #5b82d7;
       }
       @media (min-width: 568px) {
@@ -121,14 +121,14 @@
       width: calc(50% - 20px);
       }
       }
- #bootstrap-overrides .testbox {
+ #overrides .testbox {
       display: flex;
       justify-content: center;
       align-items: center;
       height: inherit;
       padding: 20px;
       }
-#bootstrap-overrides form {
+#overrides form {
 	color:black;
       width: 60%;
       padding: 20px;
