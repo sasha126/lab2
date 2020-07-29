@@ -2,7 +2,7 @@
 <head>
 <title>Report</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="mystyles.css">
+<link rel="stylesheet" href="mystyles.css" type="text/css">
 </head>
 <style>
   @keyframes move-left {
@@ -170,147 +170,6 @@ footer p{
 }
 
 
-.bootstrap-overrides input, select, textarea {
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-      }
-      input {
-      width: calc(100% - 10px);
-      padding: 5px;
-      }
-      input[type="date"] {
-      padding: 4px 5px;
-      }
-      select {
-      width: 100%;
-      padding: 7px 0;
-      background: transparent;
-      }
-      textarea {
-      width: calc(100% - 12px);
-      padding: 5px;
-      }
-      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
-      color:  #3263cd;
-      }
-      .item input:hover, .item select:hover, .item textarea:hover {
-      border: 1px solid transparent;
-      box-shadow: 0 0 5px 0 #3263cd;
-      color: #3263cd;
-      }
-      .item {
-      position: relative;
-      margin: 10px 0;
-      }
-      input[type="date"]::-webkit-inner-spin-button {
-      display: none;
-      }
-      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
-      position: absolute;
-      font-size: 20px;
-      color: #a9a9a9;
-      }
-      .item i {
-      right: 2%;
-      top: 28px;
-      z-index: 1;
-      }
-      [type="date"]::-webkit-calendar-picker-indicator {
-      right: 1%;
-      z-index: 2;
-      opacity: 0;
-      cursor: pointer;
-      }
-      input[type=radio], input[type=checkbox]  {
-      display: none;
-      }
-      label.radio, label.checkbox {
-      position: relative;
-      display: inline-block;
-      margin: 5px 20px 15px 0;
-      cursor: pointer;
-      }
-      .question span {
-      margin-left: 30px;
-      }
-      label.radio:before, label.checkbox:before{
-      content: "";
-      position: absolute;
-      top: 50%;
-    transform: translatey(-50%);
-      left: 0;
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      border: 2px solid #ccc;
-      }
-      label.checkbox:before{ border-radius: 5px}
-      input[type=radio]:checked + label:before, label.radio:hover:before,
-      input[type=checkbox]:checked + label:before, label.chekbox:hover:before {
-      border: 2px solid #3263cd;
-      }
-      label.radio:after, label.checkbox:after {
-      content: "";
-      position: absolute;
-      left: 6px;
-      width: 8px;
-      height: 4px;
-      border: 3px solid #3263cd;
-      border-top: none;
-      border-right: none;
-      top: 50%;
-      transform: rotate(-45deg) translatey(-50%);
-      opacity: 0;
-      }
-      input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
-      opacity: 1;
-      }
-      .btn-block {
-      margin-top: 10px;
-      text-align: center;
-      }
-      button {
-      width: 150px;
-      padding: 10px;
-      border: none;
-      border-radius: 5px; 
-      background: #000000;
-      font-size: 16px;
-      color: #fff;
-      cursor: pointer;
-      }
-      button:hover {
-      background: #5b82d7;
-      }
-      @media (min-width: 568px) {
-      .name-item, {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      }
-      .name-item input, {
-      width: calc(50% - 20px);
-      }
-      }
-.bootstrap-overrides .testbox {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: inherit;
-      padding: 20px;
-      }
-      form {
-	color:black;
-      width: 60%;
-      padding: 20px;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 0 15px 0 #ffffff; 
-      }
-
- 
-
 </style>
 <body>
     <header>
@@ -330,7 +189,7 @@ footer p{
           </div>
         </div>
       </header>
-<main class="bootstrap-overrides">
+<main id="bootstrap-overrides">
 <div class="banner">
           <h1>Report</h1>
         </div>
