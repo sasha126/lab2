@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "no" ?>
+<!DOCTYPE person SYSTEM "validation.dtd" [   
+<!ELEMENT name (firstname,lastname)>   
+<!ELEMENT firstname (#PCDATA)>   
+<!ELEMENT lastname (#PCDATA)>   
+<!ELEMENT state "Goa">   
+<!ELEMENT country "India">
+]>
+<person>   
+<name>   
+<firstname>Jonathan</firstname>   
+<lastname>Doe</lastname>   
+</name>   
+<dob>09/02/1997</dob>   
+<age>23</age>    
+<sex>Male</sex>   
+<height>5'11"</height>   
+<weight>83Kg</weight>   
+<hair>Brown</hair>   
+<eyes>Brown</eyes>   
+<phone>+919763545367</phone>   
+<lastseen>Calangute</lastseen>   
+<area>&state;&country;</area>
+</person>

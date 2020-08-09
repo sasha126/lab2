@@ -1,0 +1,10 @@
+<!ELEMENT person (dob,age,sex,height,weight,hair,eyes,phone,lastseen)>
+<!ELEMENT dob (#PCDATA)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT sex (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+<!ELEMENT weight (#PCDATA)>
+<!ELEMENT hair (#PCDATA)>
+<!ELEMENT eyes (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT lastseen (#PCDATA)>
