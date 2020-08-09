@@ -4,10 +4,49 @@
 <head>
   <title>Missing Persons</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+  <script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+        }
+    };
+    xhttp.open("GET", "mpersonrep.xml", true);
+    xhttp.send();
+    
+    function myFunction(xml) {
+        var xmlDoc = xml.responseXML;
+        document.getElementById("lastseen").innerHTML =
+        xmlDoc.getElementsByTagName("lastseen")[0].childNodes[0].nodeValue;
+    }
+    </script>
 </head>
 
 <style>
+
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+ display: inline-block;
+}
+
+li a {
+list-style-type:none;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  position:relative;
+    z-index: 1;
+}
+
 a{color: #05A5FF;}
 	
 	h1 {text-align: center;
@@ -91,13 +130,31 @@ a{color: #05A5FF;}
 
 <body>
 
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <img src="logo.png" alt="Missing Persons" height="80">
+          <nav>
+              <ul id="navbar" style="list-style-type: none;">
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="rep.html">Report</a></li>
+                <li><a href="locate.html">Find Me</a></li>
+                <li><a href="about.html">About</a></li>
+              </ul>
+          </nav>
+        </div> 
+      </div>
+    </div>
+  </header>
+
 <main>
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
           <h1 style="text-align:center;color:rgb(255, 255, 255); margin: 50px 0 30px">MISSING</h1>
-          <h2 class="text-center" style="margin-bottom: 30px"> Jonathan 'John' Doe </h2>
-          <p class="text-center" style="font-size:x-large;color:black;background-color:rgb(215, 247, 252)">
+          <h2 id="name" class="text-center" style="margin-bottom: 30px"> Jonathan 'John' Doe </h2>
+          <p id="lastseen" class="text-center" style="font-size:x-large;color:black;background-color:rgb(215, 247, 252)">
               Last Seen: Caranzalem, Goa, India; 10th June 2020
             </p>
      
@@ -109,11 +166,14 @@ a{color: #05A5FF;}
       </div>
       <div class="col-sm-6">
           <ul style="display: inline-block;text-align:left;">
-            <li> DoB: 09/02/1997</li>
-            <li> Age: 23</li>
-            <li> Sex: Male</li>
-            <li> Height: 5'11"</li>
-            <li> Weight: 83kg</li>
+            <li id="dob"> DoB: 09/02/1997</li>
+            <li id="age"> Age: 23</li>
+            <li id="sex"> Sex: Male</li>
+            <li id="height"> Height: 5'11"</li>
+            <li id="weight"> Weight: 83kg</li>
+            <li id="hair"> Sex: Male</li>
+            <li id="eyes"> Height: 5'11"</li>
+            <li id="phone"> Weight: 83kg</li>
           </ul>
       </div>
     </div>
@@ -129,7 +189,15 @@ a{color: #05A5FF;}
   </div>
 </main>
 
-
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <p> Copyright 2020 - All rights reserved</p>
+      </div>
+    </div>
+  </div>
+</footer>
       
 </body>
 
