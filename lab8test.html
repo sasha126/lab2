@@ -111,7 +111,7 @@ footer p{
           <h1 style="text-align:center;color:rgb(255, 255, 255); margin: 50px 0 30px">MISSING</h1>
           <h2 id="name" class="text-center" style="margin-bottom: 30px"> Jonathan 'John' Doe </h2>
           <p id="lastseen" class="text-center" style="font-size:x-large;color:black;background-color:rgb(215, 247, 252)">
-              Last Seen: Caranzalem, Goa, India; 10th June 2020
+              
             </p>
      
       </div>
@@ -125,10 +125,10 @@ footer p{
             <li id="dob"> </li>
             <li id="age"> </li>
             <li id="sex"> </li>
-            <li id="height"> Height: 5'11"</li>
-            <li id="weight"> Weight: 83kg</li>
-	    <li id="hair"> Hair: Brown</li>
-            <li id="eyes"> Eyes: Brown</li>
+            <li id="height"> </li>
+            <li id="weight"> </li>
+	    <li id="hair"> </li>
+            <li id="eyes"> </li>
           </ul>
       </div>
     </div>
@@ -136,8 +136,8 @@ footer p{
   <div class="container">
     <div class="row">
       <div class="col-sm-12"> 
-        <p class="text-center">
-          Please get in touch if you have any information!
+        <p class="text-center" id="phone">
+          
           </p>
       </div>
     </div>
@@ -145,7 +145,7 @@ footer p{
 </main>
 
 <script type="text/javascript">
-	var xmlFile = 'https://sasha126.github.io/lab2/lab6.xml';
+	var xmlFile = 'https://sasha126.github.io/lab2/lab8.xml';
 
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
@@ -165,24 +165,34 @@ function xmlFunction(xml) {
   var parser = new DOMParser();
   var xmlDoc = parser.parseFromString(xml, "text/xml");
   var table = "<tr><th>ProductName</th><th>Description</th><th>Rating</th><th>CurrentPrice</th><th>SuggestedPrice</th></tr>"; //subcategory heading
-  var x = xmlDoc.getElementsByTagName("PRODUCTDETAILS");
+  var x = xmlDoc.getElementsByTagName("PERSON");
   for (var elem of x) {
-    var titles = elem.getElementsByTagName("NAME")[0].childNodes[0].nodeValue;
-    var cats = elem.getElementsByTagName("DESCRIPTION")[0].childNodes[0].nodeValue;
-    var subCats = elem.getElementsByTagName("RATING")[0].childNodes[0].nodeValue;
-    var currentPrice = elem.getElementsByTagName("CURRENTPRICE")[0].childNodes[0].nodeValue;
-    var suggestedPrice = elem.getElementsByTagName("SUGGESTEDPRICE")[0].childNodes[0].nodeValue;
+    var firstname = elem.getElementsByTagName("firstname")[0].childNodes[0].nodeValue;
+    var lastname = elem.getElementsByTagName("lastname")[0].childNodes[0].nodeValue;
+    var age = elem.getElementsByTagName("age")[0].childNodes[0].nodeValue;
+    var sex = elem.getElementsByTagName("sex")[0].childNodes[0].nodeValue;
+    var height = elem.getElementsByTagName("height")[0].childNodes[0].nodeValue;
+    var weight = elem.getElementsByTagName("weight")[0].childNodes[0].nodeValue;
+    var dob = elem.getElementsByTagName("dob")[0].childNodes[0].nodeValue;
+    var hair = elem.getElementsByTagName("hair")[0].childNodes[0].nodeValue;
+    var eyes = elem.getElementsByTagName("eyes")[0].childNodes[0].nodeValue;
+    var phone = elem.getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+    var lastseen = elem.getElementsByTagName("lastseen")[0].childNodes[0].nodeValue;
 
-
-    table += "<tr><td>" + titles + "</td><td>" + cats + "</td><td>" + subCats +"</td><td>"+currentPrice+"</td><td>"+suggestedPrice+ "</td></tr>";
+    document.getElementById("name").innerHTML =  firstname+" "+lastname;
+    document.getElementById("dob").innerHTML = "DoB: "+dob;
+    document.getElementById("age").innerHTML = "Age: "+age;
+    document.getElementById("sex").innerHTML = "Sex: "+sex;
+    document.getElementById("height").innerHTML = "Height: "+height;
+    document.getElementById("weight").innerHTML = "Weight: "+weight;
+    document.getElementById("hair").innerHTML = "Hair Colour: "+hair;
+    document.getElementById("eyes").innerHTML = "Eye Colour: "+eyes;
+    document.getElementById("phone").innerHTML = "Please get in touch if you have any information! Phone Number: "+phone;
+    document.getElementById("lastseen").innerHTML = "Last seen: "+lastseen;
   }
-  document.getElementById("myTable").innerHTML = table;
 }
 loadDoc();
 </script>
-
-
-<table id="myTable"></table>
 
 <footer>
   <div class="container-fluid">
