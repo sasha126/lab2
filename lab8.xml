@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PERSONS>
+  <PERSON>  
+<firstname>Jonathan</firstname>   
+<lastname>Doe</lastname>    
+<dob>09/02/1997</dob>   
+<age>23</age>    
+<sex>Male</sex>   
+<height>5'11"</height>   
+<weight>83Kg</weight>   
+<hair>Brown</hair>   
+<eyes>Brown</eyes>   
+<phone>+919763545367</phone>   
+<lastseen>Calangute</lastseen>   
+  </PERSON>
+</PERSONS>
