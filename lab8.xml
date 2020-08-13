@@ -13,4 +13,43 @@
 <phone>+919763545367</phone>   
 <lastseen>Caranzalem, Goa, India; 10th June 2020</lastseen>   
   </PERSON>
+    <PERSON>  
+<firstname>Jack</firstname>   
+<lastname>Smith</lastname>    
+<dob>20/07/1997</dob>   
+<age>23</age>    
+<sex>Male</sex>   
+<height>5'09"</height>   
+<weight>81Kg</weight>   
+<hair>Brown</hair>   
+<eyes>Brown</eyes>   
+<phone>+919763541101</phone>   
+<lastseen>Tonca, Goa, India; 19th June 2020</lastseen>   
+  </PERSON>
+    <PERSON>  
+<firstname>Sally</firstname>   
+<lastname>Jackson</lastname>    
+<dob>20/10/1987</dob>   
+<age>33</age>    
+<sex>Male</sex>   
+<height>5'03"</height>   
+<weight>72Kg</weight>   
+<hair>Black</hair>   
+<eyes>Brown</eyes>   
+<phone>+919868541101</phone>   
+<lastseen>Nuvem, Goa, India; 19th January 2020</lastseen>   
+  </PERSON>
+ <PERSON>  
+<firstname>Sally</firstname>   
+<lastname>Jackson</lastname>    
+<dob>26/11/1998</dob>   
+<age>22</age>    
+<sex>Male</sex>   
+<height>5'11"</height>   
+<weight>86Kg</weight>   
+<hair>Black</hair>   
+<eyes>Brown</eyes>   
+<phone>+919868541101</phone>   
+<lastseen>Old Goa, Goa, India; 19th January 2020</lastseen>   
+  </PERSON>
 </PERSONS>
