@@ -44,7 +44,6 @@ xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">
                </xsl:for-each> 
 					
             </table> 
-            <a xlink:type="simple" xlink:href="index.html">Learn More</a>
          </body> 
       </html> 
    </xsl:template>  
