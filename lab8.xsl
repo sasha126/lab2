@@ -45,7 +45,7 @@ xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">
                </xsl:for-each> 
 					
             </table> 
-            <p><xsl:value-of select="contact"></p>
+            <p><xsl:value-of select="contact"/></p>
          </body> 
       </html> 
    </xsl:template>  
