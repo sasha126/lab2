@@ -1,6 +1,7 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <xsl:stylesheet version = "1.0" 
-xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">   
+xmlns:xsl = "http://www.w3.org/1999/XSL/Transform"
+xmlns:xlink="http://www.w3.org/1999/xlink">   
    <xsl:template match = "/"> 
 		
       <html> 
@@ -40,6 +41,7 @@ xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">
                      <td><xsl:value-of select = "eyes"/></td> 
                      <td><xsl:value-of select = "phone"/></td> 
                      <td><xsl:value-of select = "lastseen"/></td> 
+                     <td><a xlink:type="simple" xlink:href="index.html">Home</a></td>
                   </tr> 
                </xsl:for-each> 
 					
