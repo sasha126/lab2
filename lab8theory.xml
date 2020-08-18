@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type = "text/xsl" href = "lab8.xsl"?> 
-<PERSONS>
+<PERSONS xmlns:xlink="http://www.w3.org/1999/xlink">
   <PERSON id="1">  
 <firstname>Jonathan</firstname>   
 <lastname>Doe</lastname>    
@@ -53,4 +53,5 @@
 <phone>+919868541101</phone>   
 <lastseen>Old Goa, Goa, India; 19th January 2020</lastseen>   
   </PERSON>
+  <contact xlink:type="simple" xlink:href="https://citizen.goapolice.gov.in/web/guest/missing-person" xlink:show="new">Go to official site</contact>
 </PERSONS>

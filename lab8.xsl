@@ -9,7 +9,7 @@ xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">
 				
             <table border = "1"> 
                <tr bgcolor = "#eeeeee"> 
-               <th>ID</th>
+                  <th>ID</th>
                   <th>First Name</th> 
                   <th>Last Name</th> 
                   <th>DoB</th>
@@ -45,6 +45,7 @@ xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">
                </xsl:for-each> 
 					
             </table> 
+            <p><xsl:value-of select="contact"></p>
          </body> 
       </html> 
    </xsl:template>  
