@@ -13,7 +13,7 @@
 <eyes>Brown</eyes>   
 <phone>+919763545367</phone>   
 <lastseen>Caranzalem, Goa, India; 10th June 2020</lastseen> 
-<contact xlink:type="simple" xlink:href="https://sasha126.github.io/lab2/mboy.jpg">Image</contact>  
+<contact xlink:type="locator" xlink:href="https://sasha126.github.io/lab2/mboy.jpg">Image</contact>  
   </PERSON>
     <PERSON id="2">  
 <firstname>Jack</firstname>   
@@ -27,7 +27,7 @@
 <eyes>Brown</eyes>   
 <phone>+919763541101</phone>   
 <lastseen>Tonca, Goa, India; 19th June 2020</lastseen>   
-<contact xlink:type="simple" xlink:href="https://sasha126.github.io/lab2/mboy.jpg">Image</contact>  
+<contact xlink:type="locator" xlink:href="https://sasha126.github.io/lab2/mboy.jpg">Image</contact>  
   </PERSON>
     <PERSON id="3">  
 <firstname>Sally</firstname>   
@@ -41,7 +41,7 @@
 <eyes>Brown</eyes>   
 <phone>+919868541101</phone>   
 <lastseen>Nuvem, Goa, India; 19th January 2020</lastseen>
-<contact xlink:type="simple" xlink:href="https://sasha126.github.io/lab2/mgirl.jpg">Image</contact>  
+<contact xlink:type="locator" xlink:href="https://sasha126.github.io/lab2/mgirl.jpg">Image</contact>  
   </PERSON>
  <PERSON id="4">  
 <firstname>Peter</firstname>   
@@ -55,7 +55,7 @@
 <eyes>Brown</eyes>   
 <phone>+919868541101</phone>   
 <lastseen>Old Goa, Goa, India; 19th January 2020</lastseen> 
-<contact xlink:type="simple" xlink:href="https://sasha126.github.io/lab2/mman.jpg">Image</contact>  
+<contact xlink:type="locator" xlink:href="https://sasha126.github.io/lab2/mman.jpg">Image</contact>  
   </PERSON>
   
 </PERSONS>
