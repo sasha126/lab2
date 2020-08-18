@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?xml-stylesheet type = "text/xsl" href = "lab8.xsl"?> 
 <PERSONS>
-  <PERSON>  
+  <PERSON id="1">  
 <firstname>Jonathan</firstname>   
 <lastname>Doe</lastname>    
 <dob>09/02/1997</dob>   
@@ -14,7 +14,7 @@
 <phone>+919763545367</phone>   
 <lastseen>Caranzalem, Goa, India; 10th June 2020</lastseen>   
   </PERSON>
-    <PERSON>  
+    <PERSON id="2">  
 <firstname>Jack</firstname>   
 <lastname>Smith</lastname>    
 <dob>20/07/1997</dob>   
@@ -27,7 +27,7 @@
 <phone>+919763541101</phone>   
 <lastseen>Tonca, Goa, India; 19th June 2020</lastseen>   
   </PERSON>
-    <PERSON>  
+    <PERSON id="3">  
 <firstname>Sally</firstname>   
 <lastname>Jackson</lastname>    
 <dob>20/10/1987</dob>   
@@ -40,7 +40,7 @@
 <phone>+919868541101</phone>   
 <lastseen>Nuvem, Goa, India; 19th January 2020</lastseen>   
   </PERSON>
- <PERSON>  
+ <PERSON id="4">  
 <firstname>Sally</firstname>   
 <lastname>Jackson</lastname>    
 <dob>26/11/1998</dob>   
