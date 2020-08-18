@@ -40,7 +40,7 @@ xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">
                      <td><xsl:value-of select = "eyes"/></td> 
                      <td><xsl:value-of select = "phone"/></td> 
                      <td><xsl:value-of select = "lastseen"/></td> 
-						<td><xsl:value-of select="contact"/></td>
+						   <td><xsl:value-of select="contact"/></td>
                   </tr> 
                </xsl:for-each> 
 					
