@@ -32,7 +32,7 @@
 <lastname>Jackson</lastname>    
 <dob>20/10/1987</dob>   
 <age>33</age>    
-<sex>Male</sex>   
+<sex>Female</sex>   
 <height>5'03"</height>   
 <weight>72Kg</weight>   
 <hair>Black</hair>   
@@ -41,8 +41,8 @@
 <lastseen>Nuvem, Goa, India; 19th January 2020</lastseen>   
   </PERSON>
  <PERSON>  
-<firstname>Sally</firstname>   
-<lastname>Jackson</lastname>    
+<firstname>Peter</firstname>   
+<lastname>Jacobson</lastname>    
 <dob>26/11/1998</dob>   
 <age>22</age>    
 <sex>Male</sex>   
