@@ -48,8 +48,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
 					
             </table> 
             
-            <svg viewBox="0 300 160 40" xmlns="http://www.w3.org/2000/svg">
-  <a xlink:href="https://citizen.goapolice.gov.in/web/guest/missing-person"><text>Learn More</text></a>
+            <svg viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg">
+  <a xlink:href="https://citizen.goapolice.gov.in/web/guest/missing-person"><text x="10" y="250">Learn More</text></a>
 </svg>
          </body> 
       </html> 
