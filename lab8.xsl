@@ -47,7 +47,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                </xsl:for-each> 
 					
             </table> 
-            <h2>Missing Persons of Female Gender</h2>
+            <h2>Latest Case</h2>
             <table border = "1"> 
                <tr bgcolor = "#eeeeee"> 
                   <th>ID</th>
@@ -64,7 +64,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                   <th>Last Seen</th>
                </tr> 
 				
-               <xsl:for-each select="/PERSONS/PERSON[sex="Female"]"> 
+               <xsl:for-each select="/PERSONS/PERSON[last()]"> 
                   <tr> 
                      <td> 
                         <xsl:value-of select = "@id"/> 
