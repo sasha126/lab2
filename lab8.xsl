@@ -184,7 +184,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                   <th>Last Seen</th>
                </tr> 
 				
-               <xsl:for-each select="/PERSONS/PERSON[age &gt; avg(/PERSONS/PERSON/age/@value)]"> 
+               <xsl:for-each select="/PERSONS/PERSON[age &gt; min(/PERSONS/PERSON/age)]"> 
                   <tr> 
                      <td> 
                         <xsl:value-of select = "@id"/> 
