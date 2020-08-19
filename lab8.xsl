@@ -104,7 +104,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                   <th>Last Seen</th>
                </tr> 
 				
-               <xsl:for-each select="/PERSONS/PERSON[age<'30']"> 
+               <xsl:for-each select="/PERSONS/PERSON[age &lt; 30]"> 
                   <tr> 
                      <td> 
                         <xsl:value-of select = "@id"/> 
