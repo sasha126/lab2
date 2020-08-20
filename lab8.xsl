@@ -12,7 +12,7 @@ h2 {
      color: #FFFFFF;
 }
 
-a {
+text {
    color: #788b91;
 }
 </style>
