@@ -26,7 +26,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                </tr> 
 				
                <xsl:for-each select="PERSONS/PERSON"> 
-                  <tr> 
+                  <tr bgcolor = "#ffffff"> 
                      <td> 
                         <xsl:value-of select = "@id"/> 
                      </td> 
@@ -65,7 +65,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                </tr> 
 				
                <xsl:for-each select="/PERSONS/PERSON[last()]"> 
-                  <tr> 
+                  <tr bgcolor = "#ffffff"> 
                      <td> 
                         <xsl:value-of select = "@id"/> 
                      </td> 
@@ -105,7 +105,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                </tr> 
 				
                <xsl:for-each select="/PERSONS/PERSON[age &lt; 30]"> 
-                  <tr> 
+                  <tr bgcolor = "#ffffff"> 
                      <td> 
                         <xsl:value-of select = "@id"/> 
                      </td> 
@@ -145,7 +145,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
                </tr> 
 				
                <xsl:for-each select="/PERSONS/PERSON[starts-with(lastseen,'Nuvem')]"> 
-                  <tr> 
+                  <tr bgcolor = "#ffffff"> 
                      <td> 
                         <xsl:value-of select = "@id"/> 
                      </td> 
@@ -174,7 +174,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink"
 </svg>
 
 <svg viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
-  <a xlink:href="https://sasha126.github.io/lab2/index.html#xpointer(id('here'))"><text x="100" y="35">Home</text></a>
+  <a xlink:href="https://sasha126.github.io/lab2/index.html#xpointer(id('here'))"><text x="10" y="35">Home</text></a>
 </svg>
 
          </body> 
