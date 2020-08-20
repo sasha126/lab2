@@ -13,7 +13,7 @@ h2 {
 }
 </style>
 
-         <body background="#313131"> 
+         <body bgcolor="#313131"> 
             <h2>Missing Persons</h2> 
 				
             <table border = "1"> 
