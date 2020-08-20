@@ -13,7 +13,7 @@ h2 {
 }
 
 text {
-   color: #788b91;
+   fill: #788b91;
 }
 </style>
 
