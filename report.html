@@ -284,12 +284,12 @@ footer p{
       background: #5b82d7;
       }
       @media (min-width: 568px) {
-      .name-item, {
+      .name-item {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       }
-      .name-item input, {
+      .name-item input {
       width: calc(50% - 20px);
       }
       }
@@ -492,7 +492,7 @@ footer p{
       </header>
 <main id="overrides">
 <div class="banner">
-          <h1>Report</h1>
+          <h1>Report Sighting/Info</h1>
         </div>
 <div class="testbox">
 <form action="index.html" oninput="result.value=parseInt(ppl.value)">
@@ -545,7 +545,7 @@ footer p{
 
         <div class="item">
           <p>When did you see the person?</p>
-          <input type="datetime-local" name="bdate" required/>
+          <input type="date" name="bdate" required/>
           <i class="fas fa-calendar-alt"></i>
         </div>
         
