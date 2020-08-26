@@ -4,10 +4,26 @@
 
 <script>
     function validateForm() {
+      var s=true;
+      var flag=false;
+
+      if (!document.getElementById('radio_4').checked && !document.getElementById('radio_5').checked && !document.getElementById('radio_6').checked) {
+        s=false;
+      }
 
       var x = document.getElementById("dist");
       if(x.options[x.selectedIndex].value == 1) {
         alert("Please select a district")
+        return false;
+      }
+
+      if(myForm.age.value=='' || s==false || myForm.height.value=='' || myForm.weight.value=='' || myForm.hair.value=='' || myForm.eyes.value=='') {
+        flag=true;
+      }
+
+var file=document.getElementById("photo");
+      if((file.files.length == 0) && flag) { 
+        alert("Please upload photo or fill description");
         return false;
       }
 
@@ -32,10 +48,6 @@ document.myForm.email.focus();
 return false;
 }
 
-
-//if (x.options[x.selectedIndex].value == "1") {
-//alert("Please select a district");
- //  }
 } 
 </script>
 
@@ -608,10 +620,23 @@ footer p{
         <input type="number" name="age">
         </div>
 
-        <div class="item">
-            <p>Sex</p>
-            <input type="text" name="sex">
+        <div class="question">
+          <p>Sex</p>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="none" id="radio_4" name="time"/>
+              <label for="radio_4" class="radio"><span>Male</span></label>
             </div>
+            <div>
+              <input type="radio" value="none" id="radio_5" name="time"/>
+              <label for="radio_5" class="radio"><span>Female</span></label>
+            </div>
+            <div>
+              <input type="radio" value="none" id="radio_6" name="time"/>
+              <label for="radio_6" class="radio"><span>Other</span></label>
+            </div>
+          </div>
+        </div>
     
     <div class="item">
         <p>Hair Colour</p>
@@ -635,7 +660,7 @@ footer p{
 
             <div class="item">
                 <p>Photo</p>
-                        <input type="file" accept="image/*" name="photo">
+                        <input type="file" accept="image/*" id="photo">
                 </div>
 </fieldset>
         <div class="item">
