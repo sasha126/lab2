@@ -5,6 +5,12 @@
 <script>
     function validateForm() {
 
+      var x = document.getElementById("dist");
+      if(x.options[x.selectedIndex].value == 1) {
+        alert("Please select a district")
+        return false;
+      }
+
   if (myForm.phone.value == '' && myForm.email.value == '') {
                 alert('You have to enter either phone number or email address');
                 return false;
@@ -26,6 +32,10 @@ document.myForm.email.focus();
 return false;
 }
 
+
+//if (x.options[x.selectedIndex].value == "1") {
+//alert("Please select a district");
+ //  }
 } 
 </script>
 
@@ -180,6 +190,37 @@ header img{
 li a:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown {
+  float:right;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .active {
@@ -509,7 +550,15 @@ footer p{
               <nav>
                   <ul id="navbar" style="list-style-type: none;">
                       <li><a  href="index.html">Home</a></li>
-                      <li><a  class="active" href="rep.html">Report</a></li>
+                      <div class="dropdown">
+                        <li class="dropbtn"><a class="active">Report </a>
+                          <i class="fa fa-caret-down"></i>
+                        </li>
+                        <div class="dropdown-content">
+                          <a href="report.html">Sighting</a>
+                          <a href="lab8valid.html">Missing</a>
+                        </div>
+                      </div> 
                     <li><a href="locate.html">Find Me</a></li>
                     <li><a href="about.html">About</a></li>
                   </ul>
@@ -602,16 +651,11 @@ footer p{
 
         <div class="item">
             <p>District</p>
-            <Input type = “text” list =“name”>
-  
-  <datalist id =“name”>
-  
-  <option value = North>
-  
-  <option value = South>
-  
-  </datalist>
-  </input>
+            <select id="dist">
+              <option value="1" selected>--Please Select--</option>
+              <option value="2">North</option>
+              <option value="3">South</option>
+            </select>
           </div>
         
         <div class="question">

@@ -8,6 +8,39 @@
 </head>
 
 <style>
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown {
+  float:right;
+  overflow: hidden;
+  padding-right: 10px;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
   @keyframes move-left {
     from {left: 0;}
     to {left: -100%;}
@@ -219,8 +252,15 @@ ol li{
               <nav>
                   <ul id="navbar" style="list-style-type: none;">
                     <li><a  href="index.html">Home</a></li>
-                    <li><a  class="active" href="rep.html">Report</a></li>
-                    <li><a href="locate.html">Find Me</a></li>
+                    <div class="dropdown">
+                      <li class="dropbtn"><a class="active">Report </a>
+                        <i class="fa fa-caret-down"></i>
+                      </li>
+                      <div class="dropdown-content">
+                        <a href="report.html">Sighting</a>
+                        <a href="lab8valid.html">Missing</a>
+                      </div>
+                    </div>                     <li><a href="locate.html">Find Me</a></li>
                     <li><a href="about.html">About</a></li>
                   </ul>
               </nav>
