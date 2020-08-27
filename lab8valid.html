@@ -4,6 +4,7 @@
 
 <script>
     function validateForm() {
+
       var s=true;
       var flag=false;
 
@@ -36,7 +37,7 @@ var file=document.getElementById("photo");
     text = "Age not valid";
   } 
 
-  var mailformat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+ /* var mailformat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 if(myForm.email.value.test(mailformat))
 {
 return true;
@@ -44,10 +45,9 @@ return true;
 else
 {
 alert("You have entered an invalid email address!");
-document.myForm.email.focus();
 return false;
-}
-
+}  
+*/
 } 
 </script>
 
@@ -600,7 +600,7 @@ footer p{
         </div>
         <div class="item">
           <p>Email</p>
-          <input type="email" placeholder="abc@gmail.com" name="email"/>
+          <input type="text" placeholder="abc@gmail.com" name="email"/>
         </div>
         <div class="item">
           <p>Phone Number</p>
