@@ -5,6 +5,8 @@
 <script>
     function validateForm() {
 
+      
+
       var s=true;
       var flag=false;
 
@@ -28,17 +30,27 @@ var file=document.getElementById("photo");
         return false;
       }
 
+      var f=true;
+
   if (myForm.phone.value == '' && myForm.email.value == '') {
                 alert('You have to enter either phone number or email address');
                 return false;
             }
 
-    if (isNaN(myForm.age.value) || x < 1 || x > 130) {
-    text = "Age not valid";
+            var pat = /^\d{10}$/
+
+      if(!myForm.phone.value.match(pat) && myForm.email.value == '') {
+          alert("Please enter 10 digit mobile number");
+          return false;
+      }
+
+    if (isNaN(myForm.age.value) || parseInt(myForm.age.value) < 1 || parseInt(myForm.age.value) > 130) {
+    alert("Age not valid");
+    return false;
   } 
 
- /* var mailformat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-if(myForm.email.value.test(mailformat))
+ var mailformat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+if(myForm.phone.value == '' && myForm.email.value.match(mailformat))
 {
 return true;
 }
@@ -47,7 +59,7 @@ else
 alert("You have entered an invalid email address!");
 return false;
 }  
-*/
+
 } 
 </script>
 
@@ -584,7 +596,7 @@ footer p{
           <h1>Report Missing</h1>
         </div>
 <div class="testbox">
-<form action="index.html" name="myForm" onsubmit="return validateForm()">
+<form action="rep.html" name="myForm" onsubmit="return validateForm()">
     <fieldset>
         <legend >Personalia</legend>
         <div class="item">
@@ -600,7 +612,7 @@ footer p{
         </div>
         <div class="item">
           <p>Email</p>
-          <input type="text" placeholder="abc@gmail.com" name="email"/>
+          <input type="email" placeholder="abc@gmail.com" name="email"/>
         </div>
         <div class="item">
           <p>Phone Number</p>
