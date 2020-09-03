@@ -185,6 +185,63 @@ h1{
   margin-bottom: 50px;
 }
 </style>
+
+<script>
+
+function change_myselect(sel) {
+
+  var xhttp = new XMLHttpRequest();
+  var jsonFile="https://sasha126.github.io/lab2/data.json"
+
+xhttp.open("GET", jasonFile, true);
+xhttp.send();
+xhttp.onreadystatechange = function() {
+  if (this.readyState === 4 && this.status === 200) {
+  
+    jsonFunction(this.response);
+  }
+};
+
+function jsonFunction(json) {
+  //Build an array containing Customer records.
+  var orgs = new Array();
+  obj=JSON.parse(json);
+        orgs.push(["Organisation Name", "Phone", "Address", "Specialty", "Email"]);
+        for(i in json.length) {
+        orgs.push([obj.org_name, obj.phone, obj.address, obj.specialty, obj.email]);
+        }
+ 
+        //Create a HTML Table element.
+        var table = document.createElement("TABLE");
+        table.border = "1";
+ 
+        //Get the count of columns.
+        var columnCount = orgs[0].length;
+ 
+        //Add the header row.
+        var row = table.insertRow(-1);
+        for (var i = 0; i < columnCount; i++) {
+            var headerCell = document.createElement("TH");
+            headerCell.innerHTML = orgs[0][i];
+            row.appendChild(headerCell);
+        }
+ 
+        //Add the data rows.
+        for (var i = 1; i < orgs.length; i++) {
+            row = table.insertRow(-1);
+            for (var j = 0; j < columnCount; j++) {
+                var cell = row.insertCell(-1);
+                cell.innerHTML = orgs[i][j];
+            }
+        }
+ 
+        var dvTable = document.getElementById("clueless");
+        dvTable.innerHTML = "";
+        dvTable.appendChild(table);
+}
+  }
+</script>
+
 <body>
     <header>
         <div class="container">
@@ -245,19 +302,34 @@ h1{
             </table>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-sm-12">
         <canvas id="myCanvas" height="400" style="margin-top: 30px; border:1px solid #ffffff;text-align:center;display:inline-block;">
           </canvas>
     </div>
   </div>
+</div> -->
+
+<div class="row">
+  <div class="col-sm-12">
+    <select id="more" onchange="change_myselect(this.value)">
+      <option value="" selected>--Please Select--</option>
+      <option value="yes">National</option>
+      <option value="no">State</option>
+    </select>
+  </div>
 </div>
 
+<div class="row">
+  <div class="col-sm-12">
+   <div id="clueless">
 
+   </div>
+  </div>
+</div>
 
-
-
-      </main><footer>
+      </main>
+      <footer>
           <div class="container-fluid">
             <div class="row">
               <div class="col-sm-12">
