@@ -1,5 +1,5 @@
-[
-    {
+{
+    "101": {
         "id":"101",
         "org_name":"TrackChild 2.0",
         "phone":["+91 9830920103"],
@@ -9,7 +9,7 @@
         "national_org":"yes"
     },
 
-    {
+    "102": {
         "id":"102",
         "org_name":"Corporate Intelligence Services",
         "phone":["+91 8806038902","+91 9769139982","+91 9022880649"],
@@ -19,8 +19,7 @@
         "national_org":"yes"
     },
 
-    {
-        "id":"103",
+    "103": {
         "org_name":"Accent Confidential Investigation Pvt Ltd",
         "phone":["+91 9819197220"],
         "address":"Crystal Plaza, Panjim",
@@ -29,8 +28,7 @@
         "national_org":"yes"
     },
 
-    {
-        "id":"104",
+    "104": {
         "org_name":"Super Detective Agency",
         "phone":["+91 9152390323"],
         "address":"Lane No 6, Panjim",
@@ -39,8 +37,7 @@
         "national_org":"yes"
     },
 
-    {
-        "id":"105",
+    "105": {
         "org_name":"Titan Security Services",
         "phone":["+91 7798682374","+91 9764486298"],
         "address":"Deulwada, Pernem",
@@ -48,4 +45,4 @@
         "email":"N/A",
         "national_org":"no"
     }
-]
+}

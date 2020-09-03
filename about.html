@@ -204,11 +204,11 @@ function jsonFunction(json) {
   //Build an array containing Customer records.
   var orgs = new Array();
   var obj = JSON.parse(json); 
-  alert(obj);
+  
             var res = []; 
             for(var i in obj) 
-                res.push(obj[i]);         
-                
+                res.push(json[i]);         
+          alert(res);      
         orgs.push(["Organisation Name", "Phone", "Address", "Specialty", "Email"]);
         for(var i in res) {
         orgs.push([res.org_name, res.phone, res.address, res.specialty, res.email]);
