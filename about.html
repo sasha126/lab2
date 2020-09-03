@@ -189,15 +189,13 @@ h1{
 <script>
 
 function change_myselect(sel) {
-
   var xhttp = new XMLHttpRequest();
   var jsonFile="https://sasha126.github.io/lab2/data.json"
 
-xhttp.open("GET", jasonFile, true);
+xhttp.open("GET", jsonFile, true);
 xhttp.send();
 xhttp.onreadystatechange = function() {
   if (this.readyState === 4 && this.status === 200) {
-  
     jsonFunction(this.response);
   }
 };
@@ -205,10 +203,15 @@ xhttp.onreadystatechange = function() {
 function jsonFunction(json) {
   //Build an array containing Customer records.
   var orgs = new Array();
-  obj=JSON.parse(json);
+  var obj = JSON.parse(json); 
+  alert(obj);
+            var res = []; 
+            for(var i in obj) 
+                res.push(obj[i]);         
+                
         orgs.push(["Organisation Name", "Phone", "Address", "Specialty", "Email"]);
-        for(i in json.length) {
-        orgs.push([obj.org_name, obj.phone, obj.address, obj.specialty, obj.email]);
+        for(var i in res) {
+        orgs.push([res.org_name, res.phone, res.address, res.specialty, res.email]);
         }
  
         //Create a HTML Table element.
