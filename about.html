@@ -203,15 +203,15 @@ xhttp.onreadystatechange = function() {
 function jsonFunction(json) {
   //Build an array containing Customer records.
   var orgs = new Array();
-  var obj = JSON.parse(json); 
-  
+  var myArray = JSON.parse(json);
+    alert(myArray[0].id);
+  alert(obj);
             var res = []; 
             for(var i in obj) 
-                res.push(json[i]);         
-          alert(res);      
+                res.push(obj[i]);         
         orgs.push(["Organisation Name", "Phone", "Address", "Specialty", "Email"]);
-        for(var i in res) {
-        orgs.push([res.org_name, res.phone, res.address, res.specialty, res.email]);
+        for(var i in obj) {
+        orgs.push([obj.org_name, obj.phone, obj.address, obj.specialty, obj.email]);
         }
  
         //Create a HTML Table element.
