@@ -204,9 +204,9 @@ function jsonFunction(json,sel) {
   //Build an array containing Customer records.
   var orgs = new Array();
   var myArray = JSON.parse(json);
-alert(sel);
             var res = []; 
             for(var i = 0; i < myArray.length; i++) {
+              if(sel==myArray[i].national_org)
                 res.push(myArray[i]); 
             }
 
@@ -312,9 +312,12 @@ alert(sel);
     </div>
   </div>
 </div> -->
-
+<br>
 <div class="row">
   <div class="col-sm-12">
+    <p style="color: white;">
+      To view organisations in Goa offering search/detective services for missing persons cases:
+    </p>
     <select id="more" onchange="change_myselect(this.value)">
       <option value="" selected>--Please Select--</option>
       <option value="yes">National</option>
