@@ -226,6 +226,9 @@ function jsonFunction(json,sel) {
         for (var i = 0; i < columnCount; i++) {
             var headerCell = document.createElement("TH");
             headerCell.innerHTML = orgs[0][i];
+            headerCell.style.color="black";
+            headerCell.style.backgroundColor="#bce9f9";
+            headerCell.style.borderColor="black";
             row.appendChild(headerCell);
         }
  
@@ -235,6 +238,9 @@ function jsonFunction(json,sel) {
             for (var j = 0; j < columnCount; j++) {
                 var cell = row.insertCell(-1);
                 cell.innerHTML = orgs[i][j];
+                cell.style.backgroundColor="white";
+                cell.style.color="black";
+                cell.style.borderColor="black";
             }
         }
  
