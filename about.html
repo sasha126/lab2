@@ -5,6 +5,20 @@
 
 </head>
 <style>
+
+select {
+      padding: 7px 0;
+      width: 250px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+}
+
+select:hover {
+  border: 1px solid transparent;
+      box-shadow: 0 0 5px 0 #3263cd;
+}
+
   @keyframes move-left {
     from {left: 0;}
     to {left: -100%;}
@@ -321,16 +335,14 @@ function jsonFunction(json,sel) {
 </div> -->
 <br>
 <div class="row">
-  <div class="col-sm-12">
     <p style="color: white;">
-      To view organisations in Goa offering search/detective services for missing persons cases:
-    </p>
+      To view organisations in Goa offering services for missing persons cases:
     <select id="more" onchange="change_myselect(this.value)">
       <option value="" selected>--Please Select--</option>
       <option value="yes">National</option>
       <option value="no">State</option>
     </select>
-  </div>
+  </p>
 </div>
 
 <div class="row">
