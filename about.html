@@ -5,6 +5,23 @@
 
 </head>
 <style>
+#pic {
+color: #fff;
+text-align: center;
+}
+
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  color: #000;
+  background-color: #bce9f9;
+  border: solid 1px white;
+}
+
+#panel {
+  padding: 15px;
+  display: none;
+}
 
 select {
       padding: 7px 0;
@@ -215,7 +232,6 @@ xhttp.onreadystatechange = function() {
 };
 
 function jsonFunction(json,sel) {
-  //Build an array containing Customer records.
   var orgs = new Array();
   var myArray = JSON.parse(json);
             var res = []; 
@@ -229,14 +245,11 @@ function jsonFunction(json,sel) {
         for(var i=0; i<res.length;i++) {
         orgs.push([res[i].org_name, res[i].phone, res[i].address, res[i].specialty, res[i].email]);
         }
-        //Create a HTML Table element.
         var table = document.createElement("TABLE");
         table.border = "1";
  
-        //Get the count of columns.
         var columnCount = orgs[0].length;
  
-        //Add the header row.
         var row = table.insertRow(-1);
         for (var i = 0; i < columnCount; i++) {
             var headerCell = document.createElement("TH");
@@ -247,7 +260,6 @@ function jsonFunction(json,sel) {
             row.appendChild(headerCell);
         }
  
-        //Add the data rows.
         for (var i = 1; i < orgs.length; i++) {
             row = table.insertRow(-1);
             for (var j = 0; j < columnCount; j++) {
@@ -264,6 +276,32 @@ function jsonFunction(json,sel) {
         dvTable.appendChild(table);
 }
   }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#pic #2").hide();
+    $("#flip").mouseenter(function(){
+    $("#panel").slideDown("slow");
+  });
+
+  $("#flip").mouseleave(function(){
+    $("#panel").slideUp("slow");
+  });
+
+$("#pic").click(function() {
+$("#pic #1").hide();
+$("#pic #2").show();
+});
+
+$("#pic").dblclick(function() {
+$("#pic #1").show();
+$("#pic #2").hide();
+});
+
+  });
+
 </script>
 
 <body>
@@ -286,6 +324,22 @@ function jsonFunction(json,sel) {
       </header>
       <main>
 <h1>About</h1>
+
+<div id="flip">Who is a Missing Person?</div>
+  <div id="panel">
+    A missing person is a person who has disappeared and whose status as alive or dead cannot be confirmed as their location and fate are not known.
+    A person may go missing through a voluntary disappearance, or else due to an accident, crime, death in a location where they cannot be found (such as at sea), or many other reasons.
+    </div>
+    <br>
+    <br>
+
+    <div id="pic">
+      <p id="1" >Official Site Details</p>
+      <p id="2" >https://trackthemissingchild.gov.in/trackchild/goa</p>
+      </div>
+
+    <br>
+    <br>
 
 <div class="container">
   <div class="row">
@@ -326,15 +380,9 @@ function jsonFunction(json,sel) {
             </table>
     </div>
   </div>
-  <!-- <div class="row">
-    <div class="col-sm-12">
-        <canvas id="myCanvas" height="400" style="margin-top: 30px; border:1px solid #ffffff;text-align:center;display:inline-block;">
-          </canvas>
-    </div>
-  </div>
-</div> -->
-<br>
-<div class="row">
+  <br>
+
+  <div class="row">
     <p style="color: white;">
       To view organisations in Goa offering services for missing persons cases:
     <select id="more" onchange="change_myselect(this.value)">
@@ -352,6 +400,10 @@ function jsonFunction(json,sel) {
    </div>
   </div>
 </div>
+
+  
+
+
 
       </main>
       <footer>

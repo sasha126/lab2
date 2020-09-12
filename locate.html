@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Find Me</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 <script>
     function showPosition() {
         if(navigator.geolocation) {
@@ -16,10 +16,66 @@
             alert("Sorry, your browser does not support HTML5 geolocation.");
         }
     }
+    
+
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+   var c=1;
+    $(document).ready(function(){
+  $('#view').on("click",function(e){
+   if(c==1) {
+$('div.slideshow img.img4').fadeOut();
+$('div.slideshow img.img3').fadeIn();
+    
+    }
+ 
+    if(c==2) {
+$('div.slideshow img.img3').fadeOut();
+     $('div.slideshow img.img2').fadeIn();
+
+    }
+ 
+    if(c==3) {
+     $('div.slideshow img.img2').fadeOut();
+     $('div.slideshow img.img1').fadeIn();
+  
+      
+    }
+ 
+    if(c==4) {
+     $('div.slideshow img.img1').fadeOut();
+          $('div.slideshow img.img4').fadeIn();
+  
+    }
+
+    c=c+1;
+    if(c>4) {
+        c=1;
+    }
+  });
+});
 </script>
 
 </head>
 <style>
+
+     
+.slideshow {
+  position:relative;
+  height:440px;
+  width:320px;
+  margin:0 auto 100px;
+
+}
+
+.slideshow img {
+  position:absolute;
+  left:0;
+}
+
 
 @keyframes move-left {
     from {left: 0;}
@@ -206,6 +262,21 @@ footer p{
   
   <main>
 <h1>Find Me</h1>
+
+<p style="text-align:center;">
+  <button id="view">
+      Next
+    </button>
+</p>
+  
+  <div class="slideshow">
+    <img class="img1" src="babygirl.jpg" height="440" width="320" alt="" />
+    <img class="img2" src="mboy.jpg" height="440" width="320" alt="" />
+    <img class="img3" src="mgirl.jpg" height="440" width="320" alt="" />
+    <img class="img4" src="mman.jpg" height="440" width="320" alt="" />
+</div>
+
+
 <p style="text-align:center;">
     <button style="padding: 10px 24px;background-color: #3263cd;color:white;border-radius: 12px;" type="button" onclick="showPosition();">Show Position</button><br><br>
 </p>
@@ -222,6 +293,7 @@ footer p{
 </div><style>.mapouter{position:relative;margin: auto;text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
 
 
+
 <p style="text-align:center;">
 
 <video width="320" height="240" controls>
@@ -230,15 +302,18 @@ Your browser does not support the video tag.
 </video>
 <br>
 <br>
-You can always be found, never lose hope
+<p style="text-align: center;">
+  You can always be found, never lose hope
+  <br>
 <br>
-<br>
-<audio controls>
-  <source src="music.mp3" type="audio/mpeg">
+
+<audio controls src="music.mp3" type="audio/mpeg" loop="loop">
 Your browser does not support the audio element.
 </audio>
-
+</p>
 <br>
+<br>
+
 
 <p style="text-align:center">
 <object data="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/i-miss-you-sometimes-when-one-1551217301.jpg" width="300" height="400"></object>
