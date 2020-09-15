@@ -19,7 +19,7 @@
       $( "#sortable" ).sortable();
       $( "#sortable" ).disableSelection();
       $( "#tabs-1" ).tabs();
-      $("#dialogMsg").dialog({ closeText : '' ,width: 400});
+      $("#dialogMsg").dialog({ closeText : '' ,width: 400, draggable:false});
 
       var availableTags = [
       "Jonathan Doe",
@@ -397,6 +397,7 @@ footer p{
                     <li><a  href="index.html">Home</a></li>
                     <li><a   href="rep.html">Report</a></li>
                     <li><a  href="locate.html">Find Me</a></li>
+                    <li><a href="#" class="active">Latest</a></li>
                     <li><a href="about.html">About</a></li>
                   </ul>
               </nav>
