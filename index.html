@@ -2,6 +2,18 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href = "https://code.jquery.com/ui/1.10.4/themes/black-tie/jquery-ui.css"
+   rel = "stylesheet">
+<script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/ui/jquery.ui.draggable.js" type="type/javascript"></script>
+
+<script>
+  $(document).ready(function() {
+    $("#dialogMsg").dialog({ closeText : '' ,width: 400});
+  })
+       
+</script>
 
 <style>
 	
@@ -458,6 +470,16 @@ footer p{
         </div>
       </div>
     </section>
+
+    
+      <div id = "dialogMsg" title = "Goa Statistics">
+        Missing Children : 	515
+        Missing Persons : 	552
+        Recovered Children : 	326
+        Recovered Persons : 	383
+      </div>
+
+
 </main>
 <footer>
   <div class="container-fluid">
