@@ -6,12 +6,34 @@
    rel = "stylesheet">
 <script src = "https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="js/ui/jquery.ui.draggable.js" type="type/javascript"></script>
-
 <script>
+
+
  $(function () {
+  
 
+      $("#contain #draggable1").draggable();
+      $("#contain #draggable2").draggable();
+      $("#contain #draggable3").draggable();
+      $("#contain #draggable4").draggable();
+      $( "#sortable" ).sortable();
+      $( "#sortable" ).disableSelection();
+      $( "#tabs-1" ).tabs();
+      $("#dialogMsg").dialog({ closeText : '' ,width: 400});
 
-  $(document).ready(function() { 
+      var availableTags = [
+      "Jonathan Doe",
+      "Jack Smith",
+      "Sally Jackson",
+      "Melissa Landy",
+      "Peter Jacobson"
+    ];
+    $( "#out #tags" ).autocomplete({
+      source: availableTags
+    });
+   });
+
+   $(document).ready(function() { 
             $("button").click(function(e) { 
                 var x = $("form").serializeArray(); 
                 e.preventDefault(); 
@@ -25,45 +47,63 @@
             }); 
         }); 
 
-      $("#draggable").draggable();
-      $("#resizable").resizable();
-      $( "#sortable" ).sortable();
-      $( "#sortable" ).disableSelection();
-      $( "#tabs-1" ).tabs();
-      $("#dialogMsg").dialog({ closeText : '' });
-      var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-   });
-
 </script>
 </head>
 
 <style>
+
+
+
+#tabs-1{
+      font-size: 14px;
+      }
+
+#draggable1 {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  padding: 5px;
+}
+
+#draggable2 {
+  height: 440px;
+  width: 320px;
+  padding: 5px;
+}
+
+#draggable3 {
+  height: 440px;
+  width: 320px;
+  padding: 5px;
+}
+
+#draggable4 {
+  height: 440px;
+  width: 320px;
+  padding: 5px;
+}
+
+
+
+#contain {
+  display: flex;
+}
+
+    #sortable { 
+      list-style-type: none; 
+      display: block;
+      margin: 0; 
+      width: 95%; 
+      }
+
+  #sortable li { 
+    margin: 0 3px 3px 3px; 
+    padding: 2px; 
+    text-align: center;
+    display: block;
+    }
+
 
   iframe {
     width: 100%;
@@ -85,12 +125,12 @@ a{color: #05A5FF;}
 	  }
 	
 	
-	
 	body{
 		font-size: 24px;
 		background: #313131;
 		color: #A6EDF9;
     margin: 0;
+    display: inline;
 		}
 	
     nav{
@@ -178,58 +218,7 @@ footer p{
   margin-bottom: 0;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
 
-.dropdown {
-  float:right;
-  overflow: hidden;
-  padding-right: 10px;
-}
-
-.dropdown-content a {
-  float: none;
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: #333;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-    #tabs-1{
-      font-size: 14px;
-      }
-
-#draggable {
-  height: 440px;
-  width: 320px;
-  padding: 5px;
-}
-
-    #sortable { 
-      list-style-type: none; 
-      margin: 0; 
-      width: 60%; 
-      }
-
-  #sortable li { 
-    margin: 0 3px 3px 3px; 
-    padding: 2px; 
-    height: 18px; 
-    }
 
 @keyframes move-left {
     from {left: 0;}
@@ -417,53 +406,78 @@ footer p{
       </header>
   <main>
     <h1>
-Test
+Latest Happenings
     </h1>
+<form id="form123">
+      <div id = "dialogMsg" title = "Goa Statistics">
+        Missing Children : 	515
+        Missing Persons : 	552
+        Recovered Children : 	326
+        Recovered Persons : 	383
+      </div>
+    </form>
+      
 
+<div id="contain">
+    <div id = "draggable1" class = "ui-widget-content">
+      <img src="babygirl.jpg" width="320" height="440">
+   </div>
+    <div id = "draggable2" class = "ui-widget-content">
+      <img src="mboy.jpg" width="320" height="440">
+    </div>
+    <div id = "draggable3" class = "ui-widget-content">
+      <img src="mman.jpg" width="320" height="440">
+    </div>
+    <div id = "draggable4" class = "ui-widget-content">
+      <img src="mgirl.jpg" width="320" height="440">
+    </div>
+  </div>
+<br>
+<br>
+  <div class="ui-widget">
+    <p id="out" style="text-align: center; color: #fff;">
+    <label for="tags">Check Current Missing Persons: </label>
+    <input id="tags">
+  </p>
+    </div>
+
+    <br>
+    <br>   
+    
+    
+
+<div>
+  <p style="text-align: center; color: #fff;">No one is more important than the other, their positions are equal!</p><br>
+  <ul id="sortable">
+  <li style="background-color: #A6EDF9; color: black;">Person 1</li>
+  <li style="background-color: #A6EDF9; color: black;">Person 2</li>
+  <li style="background-color: #A6EDF9; color: black;">Person 3</li>
+  <li style="background-color: #A6EDF9; color: black;">Person 4</li>
+  <li style="background-color: #A6EDF9; color: #000;">Person 5</li>
+  <li style="background-color: #A6EDF9; color: black;">Person 6</li>
+  <li style="background-color: #A6EDF9; color: #000;">Person 7</li>
+  </ul>
+  </div>
+
+  <br>
+  <br>  
 
 <div id = "tabs-1">
   <ul>
      <li><a href = "#tabs-2">Report Sighting</a></li>
-     <li><a href = "#tabs-3">Missing Persons List</a></li>
+     <li><a href = "#tabs-3">Most Recent Missing Person</a></li>
   </ul>
   <div id = "tabs-2">
     <iframe src="report.html">
     </iframe>
   </div>
   <div id = "tabs-3">
-    <iframe src="lab8theory.xml"></iframe>
+    <iframe src="lab8test.html">
+    
+    </iframe>
  </div>
 
- <div id = "draggable" class = "ui-widget-content">
-  <img src="babygirl.jpg" width="320" height="440">
-</div>
 
-<form id = "form1">
-  <div id = "dialogMsg" title = "Dialog">
-     Hello this is my first JqueryUI example.
-  </div>
-</form>
-
-<div id="resizable" class = "ui-widget-content">
-Resize me!!
-</div>
-
-<div class="ui-widget">
-<label for="tags">Tags: </label>
-<input id="tags">
-</div>
-
-<div>
-<ul id="sortable">
-<li >Item 1</li>
-<li >Item 2</li>
-<li >Item 3</li>
-<li >Item 4</li>
-<li >Item 5</li>
-<li >Item 6</li>
-<li >Item 7</li>
-</ul>
-</div>
 
     </main>
 <footer>
