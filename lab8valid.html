@@ -4,9 +4,6 @@
 
 <script>
     function validateForm() {
-
-      
-
       var s=true;
       var flag=false;
 
@@ -48,17 +45,6 @@ var file=document.getElementById("photo");
     alert("Age not valid");
     return false;
   } 
-
- var mailformat = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-if(myForm.phone.value == '' && myForm.email.value.match(mailformat))
-{
-return true;
-}
-else
-{
-alert("You have entered an invalid email address!");
-return false;
-}  
 
 } 
 </script>
@@ -596,7 +582,7 @@ footer p{
           <h1>Report Missing</h1>
         </div>
 <div class="testbox">
-<form action="rep.html" name="myForm" onsubmit="return validateForm()">
+<form onsubmit="return validateForm()">
     <fieldset>
         <legend >Personalia</legend>
         <div class="item">

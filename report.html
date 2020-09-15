@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <head>
 <title>Report</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+ 
+ $(document).ready(function() { 
+            $("button").click(function(e) { 
+                var x = $("form").serializeArray(); 
+                e.preventDefault(); 
+                $("#d").append("serializeArray(): ");
+                $.each(x, function(i, field) { 
+                    $("#d").append(field.name + "=" + field.value + " , "); 
+                });
+
+                 $("#e").text("serialize(): "+$("form").serialize()); 
+          
+            }); 
+        }); 
+</script>
+
 </head>
 <style>
 	
@@ -505,44 +524,21 @@ footer p{
 	
 </style>
 <body>
-    <header>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <img src="logo.png" alt="Missing Persons" height="80">
-              <nav>
-                  <ul id="navbar" style="list-style-type: none;">
-                      <li><a  href="index.html">Home</a></li>
-                      <div class="dropdown">
-                        <li class="dropbtn"><a class="active">Report </a>
-                          <i class="fa fa-caret-down"></i>
-                        </li>
-                        <div class="dropdown-content">
-                          <a href="report.html">Sighting</a>
-                          <a href="lab8valid.html">Missing</a>
-                        </div>
-                      </div> 
-                      <li><a href="locate.html">Find Me</a></li>
-                    <li><a href="about.html">About</a></li>
-                  </ul>
-              </nav>
-            </div> 
-          </div>
-        </div>
-      </header>
+    
 <main id="overrides">
+
 <div class="banner">
           <h1>Report Sighting/Info</h1>
         </div>
 <div class="testbox">
-<form action="index.html" oninput="result.value=parseInt(ppl.value)">
+<form oninput="result.value=parseInt(ppl.value)">
 <fieldset>
 <legend >Personalia</legend>
         <div class="item">
           <p>Name</p>
           <div class="name-item">
-            <input type="text" name="name" placeholder="First Name" />
-            <input type="text" name="name" placeholder="Last Name" />
+            <input type="text" name="firstname" placeholder="First Name" />
+            <input type="text" name="lastname" placeholder="Last Name" />
           </div>
         </div>
 <div class="item">
@@ -555,14 +551,14 @@ footer p{
         </div>
         <div class="item">
           <p>Phone Number</p>
-          <input type="tel" name="phone" placeholder="123 456 7890"/>
+          <input type="tel" name="phonenumber" placeholder="123 456 7890"/>
         </div>
 
 <div class="item">
           <p>District</p>
-          <Input type = “text” list =“name”>
+          <Input type = “text” list =“distr” name="district">
 
-<datalist id =“name”>
+<datalist id =“distr”>
 
 <option value = North>
 
@@ -574,7 +570,7 @@ footer p{
 </fieldset>
 	<div class="item">
 	<p>Whom do you want to report on?</p>
-	<select id="ppl">
+	<select id="ppl" name="missingperson">
   <option value="1" selected>Jonathan Doe</option>
   <option value="2">Mary Sue</option>
   <option value="3">Melissa Landy</option>
@@ -585,7 +581,7 @@ footer p{
 
         <div class="item">
           <p>When did you see the person?</p>
-          <input type="date" name="bdate" required/>
+          <input type="date" name="lastseen" required/>
           <i class="fas fa-calendar-alt"></i>
         </div>
         
@@ -593,11 +589,11 @@ footer p{
           <p>What is the best way to contact you?</p>
           <div class="question-answer">
             <div>
-              <input type="checkbox" value="none" id="checkbox_1" name="contact1"/>
+              <input type="checkbox" value="1" id="checkbox_1" name="contact"/>
               <label for="checkbox_1" class="checkbox"><span>Phone</span></label>
             </div>
             <div>
-              <input type="checkbox" value="none" id="checkbox_2" name="contact2"/>
+              <input type="checkbox" value="2" id="checkbox_2" name="contact"/>
               <label for="checkbox_2" class="checkbox"><span>Email</span></label>
             </div>
           </div>
@@ -606,20 +602,20 @@ footer p{
           <p>If phone, when is the best time of day for a call-back?</p>
           <div class="question-answer">
             <div>
-              <input type="radio" value="none" id="radio_4" name="time"/>
+              <input type="radio" value="1" id="radio_4" name="time"/>
               <label for="radio_4" class="radio"><span>8-11 AM</span></label>
             </div>
             <div>
-              <input type="radio" value="none" id="radio_5" name="time"/>
+              <input type="radio" value="2" id="radio_5" name="time"/>
               <label for="radio_5" class="radio"><span>12-4 PM</span></label>
             </div>
             <div>
-              <input type="radio" value="none" id="radio_6" name="time"/>
+              <input type="radio" value="3" id="radio_6" name="time"/>
               <label for="radio_6" class="radio"><span>6-10 PM</span></label>
             </div>
           </div>
         </div>
-        <div class="item">
+        <div class="item" name="additional">
           <p>Anything else we should know?</p>
           <textarea rows="3"></textarea>
         </div>
@@ -635,15 +631,14 @@ footer p{
 <meter id="disk_d" value="0.6">60%</meter>
       </form>
     </div>
-  </main>
-    <footer>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-12">
-              <p> Copyright 2020 - All rights reserved</p>
-            </div>
-          </div>
-        </div>
-      </footer>
+
+<div id="d">
+
+</div>
+<br><br>
+<div id="e">
+
+</div>
+
 </body>
 </html>  
