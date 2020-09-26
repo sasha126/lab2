@@ -1,0 +1,249 @@
+ <!DOCTYPE html>
+<html lang="en-US">
+  <head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
+<script>
+/*
+  var app1 = angular.module("myApp", []);
+  var app = angular.module('newApp', []);
+app.controller('myCtrl', function($scope) {
+  $scope.firstname = "John";
+  $scope.changeName = function() {
+    $scope.firstname = "Nelly";
+  }
+});
+
+angular.module('myApps', []).controller('namesCtrl', function($scope) {
+    $scope.names = [
+        'Jani',
+        'Carl',
+        'Margareth',
+        'Hege',
+        'Joe',
+        'Gustav',
+        'Birgit',
+        'Mary',
+        'Kai'
+    ];
+});
+*/
+  </script>
+
+<style>
+@keyframes move-left {
+  from {left: 0;}
+  to {left: -100%;}
+}
+
+@keyframes move-right {
+  from {right: 0;}
+  to {right: -100%;}
+}
+
+@keyframes default {
+  from {overflow-y: hidden;}
+  to { overflow-y: auto;}
+}
+
+.disp{
+  transition: all linear 0.5s;
+  background-color: lightblue;
+  color: #000;
+  height: 140px;
+}
+
+.disp.ng-hide {
+  height: 0px;
+}
+
+html{
+    overflow-x: hidden;
+  }
+	
+  body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+    position: relative;
+    animation-name: default;
+    animation-duration: 0s;
+    animation-fill-mode: forwards;  
+  }
+  body:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-left;
+    animation-duration: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
+  body:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background: #000;
+    z-index: 10;
+    animation-name: move-right;
+    animation-duration: 0s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;  
+  }
+
+  h1 {
+  text-align: center;
+  top: 0;
+  width: 100%;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  -webkit-text-stroke: #FFFFFF;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  font-size: 50px;
+  transition: 0.3s linear;
+	}
+
+  h1:hover{
+    -webkit-text-fill-color: #fff;
+    transition: 0.3s linear;
+  }
+	
+	
+	body{
+		font-size: 24px;
+		background: #313131;
+		}
+
+    th{
+      background-color: #bce9f9;
+    }
+
+    td{
+      background-color: #fff;
+    }
+
+</style>
+
+  </head>
+  <body>
+   
+<!-- <body ng-app="ngAnimate">
+<body ng-app="">-->
+<!--Only one app at a time
+  <div ng-app="myApp">
+    <p>Name : <input type="text" ng-model="name"></p>
+    <h1>Hello {{name}}</h1>
+  </div>
+
+<div ng-app="newApp" ng-controller="myCtrl">
+  <h1 ng-click="changeName()">{{firstname}}</h1>
+</div>
+
+<div ng-app="myApps" ng-controller="namesCtrl">
+
+  <p>Type a letter in the input field:</p>
+  
+  <p><input type="text" ng-model="test"></p>
+  
+  <ul>
+    <li ng-repeat="x in names | filter:test">
+      {{ x }}
+    </li>
+  </ul>
+
+  </div>
+
+  <form name="myForm">
+    <input name="myInput" ng-model="myInput" required>
+    </form>
+    
+    <p>The input's valid state is:</p>
+    <h1>{{myForm.myInput.$valid}}</h1>
+  
+
+  <h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
+
+  <div ng-hide="myCheck">Hello</div>
+  
+  <div ng-app="" ng-init="mySwitch=true">
+
+    <p>
+    <button ng-disabled="mySwitch">Click Me!</button>
+    </p>
+    
+    <p>
+    <input type="checkbox" ng-model="mySwitch">Button
+    </p>
+    
+    <p>
+    {{ mySwitch }}
+    </p>
+    
+    </div> 
+  -->
+
+<div ng-app="myApp" ng-controller="customersCtrl">
+  <h1>Personalized Info</h1>
+  <form name="myForm" style="color: #fff;">
+    Name: <input name="myInput1" type="text" ng-model="myInput1" required><br>
+    Email: <input name="myInput" type="email" ng-model="myInput" required><br><br>
+  </form>
+    <div ng-show="myForm.myInput.$valid && myForm.myInput1.$valid">
+  <div style="color: #fff;">Sort by:
+  <input type="radio" name="sort" ng-click="sortBy='ID'">Default</input>
+  <input type="radio" name="sort" ng-click="sortBy='specialty'">Specialty</input>
+  <input type="radio" name="sort" ng-click="sortBy='org_name'">Name</input>
+</div><br>
+  <table name="myTable" ng-model="myTable">
+    <tr>
+    <th>Organisation Name</th>
+    <th>Phone No.</th>
+    <th>Specialty</th>
+    <th>Email</th>
+  </tr>
+    <tr ng-repeat="x in myData | orderBy:sortBy">
+      <td>{{ x.org_name }}</td>
+      <td>{{ x.phone }} </td>
+      <td>{{ x.specialty }}</td>
+      <td>{{ x.email }} </td>
+      </tr>
+  </table>
+
+</div>
+<br>
+<div style="color: #fff;">
+Hide details: <input type="checkbox" ng-model="hideShow"></div><br>
+
+<div ng-hide="hideShow" class="disp">
+  <br>
+  User Name: {{myInput1}}<br><br>
+  User Email ID: {{myInput}} <br>
+</div>
+
+  </div>
+  
+  <script>
+  var app = angular.module('myApp', ['ngAnimate']);
+  var firstRowData;
+  app.controller('customersCtrl', function($scope, $http) {
+    $http.get("https://sasha126.github.io/lab2/data.json").then(function (response) {
+        $scope.myData = response.data;
+        $scope.sortBy='ID';
+    });
+   
+  });
+  </script>
+  
+
+</body>
+</html> 
