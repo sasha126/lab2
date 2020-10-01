@@ -31,8 +31,10 @@ angular.module('myApps', []).controller('namesCtrl', function($scope) {
 */
   </script>
 <script>
+  //module and animation
   var app = angular.module('myApp', ['ngAnimate']);
   var firstRowData;
+  //controller
   app.controller('customersCtrl', function($scope, $http) {
     $http.get("https://sasha126.github.io/lab2/data.json").then(function (response) {
         $scope.myData = response.data;
@@ -248,16 +250,20 @@ footer p{
   </header>
 
   <main>
+      <!--Directive and Controller-->
 <div ng-app="myApp" ng-controller="customersCtrl">
   <h1>Personalized Info</h1>
   <form name="myForm" style="color: #fff;">
     Enter details to access information:<br/>
+      <!--Directive and Form-->
     Name: <input name="myInput1" type="text" ng-model="myInput1" required><br>
     Email: <input name="myInput" type="email" ng-model="myInput" required><br><br>
   </form>
+    <!--Validations-->
     <div ng-show="myForm.myInput.$valid && myForm.myInput1.$valid">
     <p style="color:white;">  Organisations:</p>
   <div style="color: #fff;">Sort by:
+      <!--Events-->
   <input type="radio" name="sort" ng-click="sortBy='ID'">Default</input>
   <input type="radio" name="sort" ng-click="sortBy='specialty'">Specialty</input>
   <input type="radio" name="sort" ng-click="sortBy='org_name'">Name</input>
@@ -269,7 +275,9 @@ footer p{
     <th>Specialty</th>
     <th>Email</th>
   </tr>
+    <!--Filter-->
     <tr ng-repeat="x in myData | orderBy:sortBy">
+        <!--Data Binding-->
       <td>{{ x.org_name }}</td>
       <td>{{ x.phone }} </td>
       <td>{{ x.specialty }}</td>
@@ -280,12 +288,13 @@ footer p{
 </div>
 <br>
 <div style="color: #fff;">
+    <!--DOM-->
 Hide details: <input type="checkbox" ng-model="hideShow"></div><br>
 
 <div ng-hide="hideShow" class="disp">
   Entered Details:-<br/>
   User Name: {{myInput1}}<br>
-  User Email ID: {{myInput}} <br>
+  User Email ID: {{myInput}}
 </div>
 
   </div>
